@@ -1,0 +1,32 @@
+import { Button } from '../ui/button';
+import Link from 'next/link';
+
+const StartUpCardBottom = ({
+    category,
+    id
+} : {
+    category?: string,
+    id: string
+}) => {
+    return (
+        <div className='flex-between mt-5'>
+            <Link 
+                href={`/?query=${category?.toLowerCase()}`}
+                className='text-[.9rem] font-medium'
+            >
+                {category}
+            </Link>
+            <Button
+                className='rounded-full bg-black-200 text-[.95rem]
+                text-white shadow-sm shadow-black/40'
+                asChild
+            >
+                <Link href={`/startup/${id}`}>
+                    Detalle
+                </Link>
+            </Button>
+        </div>
+    )
+};
+
+export default StartUpCardBottom;
