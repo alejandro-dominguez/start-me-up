@@ -9,22 +9,22 @@ const StartUpPageHero = ({ post } : { post: StartUpSchemaType }) => {
     } = post
 
     return (
-        <section className='w-full bg-primary pattern grid place-items-center
-        pt-[2.45rem] pb-[1.12rem] px-3 md:px-6 shadow-sm'>
+        <section className='bg-primary pattern grid place-items-center
+        pt-12 pb-7 px-3 md:px-6 shadow-sm'>
             <span className='bg-secondary-100 px-6 py-[.35rem] font-bold rounded-sm
-            uppercase relative tag-decoration -mt-4 mb-4 text-[.95rem] tracking-wide
+            uppercase relative tag-decoration -mt-4 mb-[1.2rem] text-[.95rem] tracking-wide
             shadow-sm shadow-black/10'>
                 <span className='drop-shadow'>
                     {formatDate(_createdAt)}
                 </span>
             </span>
-            <h1 className='uppercase bg-black px-10 py-5 font-extrabold
+            <h1 className='uppercase bg-black px-10 py-6 font-extrabold
             text-white sm:text-4xl sm:leading-[2.75rem] tracking-wide text-2xl
-            leading-7 max-w-5xl text-center'>
+            leading-8 max-w-5xl text-center'>
                 {title}
             </h1>
-            <h2 className='font-medium text-xl text-white max-w-3xl text-center break-words
-            mt-3 drop-shadow leading-6'>
+            <h2 className='font-medium text-lg sm:text-xl text-white max-w-3xl
+            text-center break-words mt-4 drop-shadow'>
                 {description}
             </h2>
         </section>

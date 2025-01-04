@@ -2,7 +2,6 @@ import {
     sanityFetch,
     SanityLive
 } from '@/sanity/lib/live';
-import { auth } from '@/auth';
 import { STARTUPS_QUERY } from '@/sanity/lib/queries';
 import HeroSection from '@/components/homeComponents/HeroSection';
 import StartupsContainer from '@/containers/StartupsContainer';
@@ -11,8 +10,7 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
     const searchBarQuery = (await searchParams).query
     const params = { search: searchBarQuery || null }
     const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params })
-    const session = await auth()
-    
+
     return (
         <>
             <HeroSection query={searchBarQuery} />

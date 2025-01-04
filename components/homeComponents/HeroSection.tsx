@@ -2,7 +2,7 @@ import SearchForm from '../SearchForm';
 
 const HeroSection = ({ query }: { query?: string }) => {
     return (
-        <section className='w-full bg-primary pattern grid place-items-center
+        <section className='bg-primary pattern grid place-items-center
         pt-10 pb-6 md:pt-16 md:pb-10 px-3 md:px-6 shadow-sm'>
             <h1 className='uppercase bg-black px-10 py-5 font-extrabold text-white -mt-4
             sm:text-4xl sm:leading-[2.75rem] tracking-wide text-2xl leading-7 max-w-5xl text-center'>

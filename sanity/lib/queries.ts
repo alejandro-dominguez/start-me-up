@@ -41,7 +41,6 @@ export const STARTUP_BY_ID_QUERY = defineQuery(
         category,
         image,
         pitch,
-        approved
     }`
 );
 
@@ -54,6 +53,15 @@ export const STARTUP_VIEWS_QUERY = defineQuery(`
 
 export const AUTHOR_BY_GOOGLE_EMAIL_QUERY = defineQuery(`
     *[_type == 'author' && email == $email][0]{
+        _id,
+        name,
+        email,
+        image,
+    }`
+);
+
+export const AUTHOR_BY_ID_QUERY = defineQuery(`
+    *[_type == 'author' && _id == $id][0]{
         _id,
         name,
         email,
