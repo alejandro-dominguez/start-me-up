@@ -1,9 +1,8 @@
 import {
     PlaylistSchemaType,
     PlaylistStartupType,
-    StartUpSchemaType
 } from '@/types';
-import EditorStartUpCard from '@/components/EditorStartUpCard';
+import EditorStartUpCard from '@/components/cards/EditorStartUpCard';
 
 const EditorStartUpsContainer = ({ editorPosts }: { editorPosts: PlaylistSchemaType }) => {
     const { select }: PlaylistSchemaType = editorPosts;

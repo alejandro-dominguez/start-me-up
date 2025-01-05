@@ -1,6 +1,6 @@
 import { PlaylistStartupType } from '@/types';
-import StartUpCardImg from './startUpCardComponents/StartUpCardImg';
-import StartUpCardBottom from './startUpCardComponents/StartUpCardBottom';
+import StartUpCardImg from '../startUpCardComponents/StartUpCardImg';
+import StartUpCardBottom from '../startUpCardComponents/StartUpCardBottom';
 
 const EditorStartUpCard = ({ post }: { post: PlaylistStartupType }) => {
     return (

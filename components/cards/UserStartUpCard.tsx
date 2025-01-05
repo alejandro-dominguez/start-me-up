@@ -1,10 +1,10 @@
 import { StartUpSchemaType } from '@/types';
-import StartUpCardTop from './startUpCardComponents/StartUpCardTop';
-import StartUpCardMainInfo from './startUpCardComponents/StartUpCardMainInfo';
-import StartUpCardImg from './startUpCardComponents/StartUpCardImg';
-import StartUpCardBottom from './startUpCardComponents/StartUpCardBottom';
+import StartUpCardTop from '../startUpCardComponents/StartUpCardTop';
+import StartUpCardMainInfo from '../startUpCardComponents/StartUpCardMainInfo';
+import StartUpCardImg from '../startUpCardComponents/StartUpCardImg';
+import StartUpCardBottom from '../startUpCardComponents/StartUpCardBottom';
 
-const StartUpCard = ({ post }: { post: StartUpSchemaType }) => {
+const UserStartUpCard = ({ post }: { post: StartUpSchemaType }) => {
     return (
         <>
         {
@@ -41,4 +41,4 @@ const StartUpCard = ({ post }: { post: StartUpSchemaType }) => {
     )
 };
 
-export default StartUpCard;
+export default UserStartUpCard;

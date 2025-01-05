@@ -1,5 +1,5 @@
 import { StartUpSchemaType } from '@/types';
-import StartUpCard from '@/components/StartUpCard';
+import StartUpCard from '@/components/cards/StartUpCard';
 
 const StartUpsContainer = ({ posts }: { posts: [StartUpSchemaType] | null }) => {
     return (
