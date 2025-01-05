@@ -40,7 +40,8 @@ export const STARTUP_BY_ID_QUERY = defineQuery(
         description,
         category,
         image,
-        pitch
+        pitch,
+        approved
     }`
 );
 
@@ -84,32 +85,22 @@ export const STARTUPS_BY_AUTHOR_QUERY = defineQuery(`
         views,
         description,
         category,
-        image
+        image,
+        approved
     }`
 );
 
 export const PLAYLIST_QUERY = defineQuery(`
     *[_type == 'playlist'][0]{
-        _id,
-        title,
-        slug,
         select[]->{
             _id,
             _createdAt,
             title,
             slug,
-            author->{
-                _id,
-                name,
-                slug,
-                image,
-                bio
-            },
-            views,
             description,
             category,
             image,
-            pitch
+            approved
         }
     }`
 );

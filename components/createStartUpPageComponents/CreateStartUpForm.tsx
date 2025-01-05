@@ -70,7 +70,7 @@ const CreateStartUpForm = () => {
     return (
         <Form
             action={formAction}
-            className='mx-auto bg-white mt-6 space-y-8 px-3 md:px-20 lg:px-44 pb-10'
+            className='mx-auto mt-5 space-y-8 px-3 md:px-20 lg:px-44 pb-10'
         >
             <main className='flex flex-col items-start justify-center gap-[.6rem]'>
                 <div className='grid grid-cols-1 md:grid-cols-3 w-full md:gap-8'>
@@ -79,15 +79,15 @@ const CreateStartUpForm = () => {
                             htmlFor='title'
                             className='font-bold text-base text-black'
                         >
-                            Title
+                            Título
                         </label>
                         <Input
                             id='title'
                             name='title'
                             className='border-[3px] border-black px-4 py-[1.375rem] text-lg text-black
-                            font-semibold rounded-full mt-[.4rem] placeholder:text-black-300'
+                            font-semibold rounded-full mt-[.4rem] placeholder:text-black-300 bg-white'
                             required
-                            placeholder='Startup Title'
+                            placeholder='Título de tu startup'
                         />
                     </div>
                     <div className='mt-4 md:mt-0'>
@@ -95,15 +95,15 @@ const CreateStartUpForm = () => {
                             htmlFor='category'
                             className='font-bold text-base text-black'
                         >
-                            Category
+                            Categoría
                         </label>
                         <Input
                             id='category'
                             name='category'
                             className='border-[3px] border-black px-4 py-[1.375rem] text-lg text-black
-                            font-semibold rounded-full mt-[.4rem] placeholder:text-black-300'
+                            font-semibold rounded-full mt-[.4rem] placeholder:text-black-300 bg-white'
                             required
-                            placeholder='Startup Category (Tech, Health, etc.)'
+                            placeholder='Tecnología, salud, economía, etc.'
                         />
                     </div>
                 </div>
@@ -116,7 +116,7 @@ const CreateStartUpForm = () => {
                             htmlFor='pitch'
                             className='font-bold text-base text-black'
                         >
-                            Pitch
+                            Propuesta
                         </label>
                         <MDeditor
                             id='pitch'
@@ -124,13 +124,13 @@ const CreateStartUpForm = () => {
                             onChange={(value) => setPitch(value as string)}
                             aria-required={true}
                             preview='edit'
-                            className='mt-2'
+                            className='mt-2 bg-white'
                             height={200}
                             style={{
                                 borderRadius: 20, overflow: 'hidden',
                             }}
                             textareaProps={{
-                                placeholder: 'Briefly describe your startup idea and what problem it solves'
+                                placeholder: 'Describe brevemente la idea de tu startup y qué problema soluciona'
                             }}
                             previewOptions={{
                                 disallowedElements: ['style']
@@ -143,15 +143,16 @@ const CreateStartUpForm = () => {
                                 htmlFor='description'
                                 className='font-bold text-base text-black'
                             >
-                                Description
+                                Descripción
                             </label>
                             <Textarea
                                 id='description'
                                 name='description'
-                                className='px-4 py-3 text-lg text-black font-semibold mt-[.4rem] placeholder:text-black-300 border-[3px] border-black rounded-[20px]
-                                min-h-28'
+                                className='px-4 py-3 text-lg text-black font-semibold
+                                mt-[.4rem] placeholder:text-black-300 border-[3px]
+                                border-black rounded-[20px] min-h-28 bg-white'
                                 required
-                                placeholder='Startup Description'
+                                placeholder='Descripción de tu startup'
                             />
                         </div>
                         <div className='md:mt-3'>
@@ -159,15 +160,15 @@ const CreateStartUpForm = () => {
                                 htmlFor='image'
                                 className='font-bold text-base text-black'
                             >
-                                Image Url
+                                Url de imagen
                             </label>
                             <Input
                                 id='image'
                                 name='image'
                                 className='border-[3px] border-black px-4 py-[1.375rem] text-lg text-black
-                                font-semibold rounded-full mt-[.4rem] placeholder:text-black-300'
+                                font-semibold rounded-full mt-[.4rem] placeholder:text-black-300 bg-white'
                                 required
-                                placeholder='Startup Image Url'
+                                placeholder='Url de portada'
                             />
                         </div>
                     </div>
@@ -180,16 +181,16 @@ const CreateStartUpForm = () => {
                     disabled={isPending}
                 >
                     <div className='relative w-full h-full grid place-items-center'>
-                        <span className='font-bold drop-shadow text-lg absolute left-6'>
+                        <span className='font-bold drop-shadow text-[1.3rem] absolute left-5 tracking-wide'>
                             {
                                 isPending ?
-                                    'Submitting'
+                                    'Enviando'
                                 :
-                                    'Submit Your Startup'
+                                    'Enviar Tu Startup'
                             }
                         </span>
                         <Send className='absolute drop-shadow scale-150 text-secondary-100
-                        -top-[.4rem] right-6' />
+                        -top-[.4rem] right-5' />
                     </div>
                 </Button>
             </main>

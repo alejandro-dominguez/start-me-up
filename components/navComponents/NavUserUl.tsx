@@ -15,7 +15,7 @@ const NavUserUl = ({ session }: { session: Session }) => {
                 className='flex items-center gap-[.3rem]'
             >
                 <BadgePlus className='size-6' />
-                <span className='font-medium tracking-[.01em]'>
+                <span className='font-medium tracking-[.01em] min-w-fit'>
                     Crear Artículo
                 </span>
             </Link>
@@ -38,10 +38,10 @@ const NavUserUl = ({ session }: { session: Session }) => {
                 </button>
             </form>
         </li>
-        <li>
+        <li className='bg-black rounded-full p-[.15rem]'>
             <Link href={`/user/${session?.id}`}>
                 <img
-                    className='size-10 rounded-full shadow shadow-black/50'
+                    className='size-10 rounded-full'
                     src={session?.user?.image || 'https://placehold.co/200x200.png'}
                     alt={session?.user?.name || 'imagen de usuario'}
                 />

@@ -17,15 +17,16 @@ const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     if (!user) return notFound()
 
     return (
-        <div className='min-h-[100svh] bg-slate-100/30'>
-            <main className=' pt-16 xs:pt-[4.5rem] mx-auto grid grid-cols-1 lg:grid-cols-2
+        <div className='min-h-[100svh] bg-slate-100/50'>
+            <main className='pt-16 xs:pt-[4.5rem] mx-auto grid grid-cols-1 lg:grid-cols-2
             px-3 md:px-6 lg:px-10 lg:gap-5'>
                 <UserCard user={user} />
-                <div className='flex flex-col gap-5 mt-3 lg:mt-0'>
-                    <p className='text-2xl font-bold text-black pl-2 lg:pl-0 tracking-[.01em]'>
-                        {session?.id === id ? 'Your' : 'All'} Startups:
+                <div className='flex flex-col gap-5 mt-4 lg:mt-0 '>
+                    <p className='text-2xl font-bold text-black pl-2 lg:pl-0 tracking-[.01em]
+                    text-center lg:text-start'>
+                        {session?.id === id ? 'Tus' : 'Todas las'} Startups:
                     </p>
-                    <ul className='grid sm:grid-cols-2 gap-5'>
+                    <ul className='grid sm:grid-cols-2 gap-5 mx-auto lg:mr-auto lg:ml-0'>
                         <Suspense fallback={<UserStartUpCardSkeleton />}>
                             <UserStartUpsContainer id={id} />
                         </Suspense>

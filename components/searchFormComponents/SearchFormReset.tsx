@@ -16,7 +16,7 @@ const SearchFormReset = () => {
             <Link
                 href='/'
                 className='rounded-full bg-secondary-100 grid place-items-center
-                size-9 text-black shadow-sm shadow-black/30'
+                size-9 text-black shadow-sm shadow-black/20'
             >
                 <X className='size-6 drop-shadow' />
             </Link>

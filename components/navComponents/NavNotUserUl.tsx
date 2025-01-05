@@ -3,7 +3,7 @@ import { LogIn } from 'lucide-react';
 
 const NavNotUserUl = () => {
     return (
-        <li>
+        <li className='mx-auto'>
             <form action={async () => {
                 'use server'
                 await signIn('google')

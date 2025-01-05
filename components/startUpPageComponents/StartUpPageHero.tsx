@@ -18,11 +18,13 @@ const StartUpPageHero = ({ post } : { post: StartUpSchemaType }) => {
                     {formatDate(_createdAt)}
                 </span>
             </span>
-            <h1 className='uppercase bg-black px-10 py-6 font-extrabold
-            text-white sm:text-4xl sm:leading-[2.75rem] tracking-wide text-2xl
-            leading-8 max-w-5xl text-center'>
-                {title}
-            </h1>
+            <div className='px-4 xs:px-0'>
+                <h1 className='uppercase bg-black px-6 xs:px-10 py-5 xs:py-6 font-extrabold
+                text-white sm:text-4xl sm:leading-[2.75rem] tracking-wide text-3xl
+                leading-9 xs:max-w-5xl text-center'>
+                    {title}
+                </h1>
+            </div>
             <h2 className='font-medium text-lg sm:text-xl text-white max-w-3xl
             text-center break-words mt-4 drop-shadow'>
                 {description}

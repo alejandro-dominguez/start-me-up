@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Search } from 'lucide-react';
 import SearchFormReset from './SearchFormReset';
 
-const SearchFormInput = ({ query }: { query?: string }) => {
+const SearchFormInput = ({ query }: { query?: string | '' }) => {
     const [ isEmpty, setIsEmpty ] = useState<boolean>(true)
 
     return (
@@ -11,9 +11,9 @@ const SearchFormInput = ({ query }: { query?: string }) => {
         <input
             name='query'
             defaultValue={query}
-            className='flex-1 font-bold placeholder:font-semibold placeholder:text-black-100
-            w-full h-auto outline-none'
-            placeholder='Search Startups'
+            className='font-bold placeholder:font-semibold placeholder:text-black-100
+            w-full h-auto outline-none flex-1'
+            placeholder='Busca Startups'
             onInput={() => setIsEmpty(false)}
             required
         />
@@ -27,7 +27,7 @@ const SearchFormInput = ({ query }: { query?: string }) => {
             <button
                 type='submit'
                 className='rounded-full bg-secondary-100 grid place-items-center
-                size-9 text-black shadow-sm shadow-black/30'
+                size-9 text-black shadow-sm shadow-black/20'
                 disabled={isEmpty}
             >
                 <Search className='size-6 drop-shadow'/>

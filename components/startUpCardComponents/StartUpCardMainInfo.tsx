@@ -22,13 +22,13 @@ const StartUpCardMainInfo = ({
             <div className='flex-1'>
                 <Link
                     href={`/user/${authorId}`}
-                    className='font-medium text-base text-black line-clamp-1 -mt-1'
+                    className='font-medium text-lg text-black line-clamp-1 -mt-2'
                 >
                     {name}
                 </Link>
                 <Link
                     href={`/startup/${id}`}
-                    className='font-semibold text-2xl text-black line-clamp-1 mt-1'
+                    className='font-semibold text-[1.65rem] text-black line-clamp-1'
                 >
                     {title}
                 </Link>
@@ -39,12 +39,13 @@ const StartUpCardMainInfo = ({
                     alt='perfil del autor'
                     width={48}
                     height={48}
-                    className='rounded-full -mt-2 shadow-sm shadow-black'
+                    className='rounded-full -mt-1 shadow-sm shadow-black/30'
                 />
             </Link>
         </div>
         <Link href={`/startup/${id}`}>
-            <p className='font-normal text-base line-clamp-2 mb-3 text-black-100 break-all'>
+            <p className='font-normal text-base line-clamp-2 mt-[.35rem] mb-4
+            text-black-100 break-all leading-[1.35rem]'>
                 {desc}
             </p>
         </Link>

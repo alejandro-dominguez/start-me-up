@@ -1,11 +1,11 @@
 import { StartUpSchemaType } from '@/types';
 import StartUpCard from '@/components/StartUpCard';
 
-const StartupsContainer = ({ posts }: { posts: [StartUpSchemaType] }) => {
+const StartUpsContainer = ({ posts }: { posts: [StartUpSchemaType] | null }) => {
     return (
         <>
         {
-            posts.length ?
+            posts?.length ?
                 posts.map((post: StartUpSchemaType) => {
                     return (
                         <StartUpCard
@@ -23,4 +23,4 @@ const StartupsContainer = ({ posts }: { posts: [StartUpSchemaType] }) => {
     )
 };
 
-export default StartupsContainer;
+export default StartUpsContainer;

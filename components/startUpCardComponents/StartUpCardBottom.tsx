@@ -12,13 +12,13 @@ const StartUpCardBottom = ({
         <div className='flex justify-between items-center mt-5'>
             <Link 
                 href={`/?query=${category?.toLowerCase()}`}
-                className='text-[.9rem] font-medium'
+                className='font-medium'
             >
                 {category}
             </Link>
             <Button
                 className='rounded-full bg-black-200 text-[.95rem]
-                text-white shadow-sm shadow-black/40'
+                text-white shadow-sm shadow-black/30'
                 asChild
             >
                 <Link href={`/startup/${id}`}>
