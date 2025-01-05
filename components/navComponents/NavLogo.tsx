@@ -3,12 +3,16 @@ import Link from 'next/link';
 
 const NavLogo = () => {
   	return (
-		<Link href='/'>
+		<Link
+			href='/'
+			className='justify-self-center xs:justify-self-auto mb-1 xs:mb-0'
+		>
 			<Image
-				src='/logo.png'
+				className='drop-shadow-sm'
+				src='/logo.svg'
 				alt='Start me up logo'
-				width={144}
-				height={30}
+				width={100}
+				height={100}
 			/>
 		</Link>
   	)

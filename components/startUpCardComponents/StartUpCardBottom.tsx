@@ -9,7 +9,7 @@ const StartUpCardBottom = ({
     id: string
 }) => {
     return (
-        <div className='flex-between mt-5'>
+        <div className='flex justify-between items-center mt-5'>
             <Link 
                 href={`/?query=${category?.toLowerCase()}`}
                 className='text-[.9rem] font-medium'

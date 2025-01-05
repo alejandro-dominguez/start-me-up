@@ -12,7 +12,7 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
     const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params })
 
     return (
-        <>
+        <div className='min-h-[100svh] bg-slate-100/30'>
             <HeroSection query={searchBarQuery} />
             <main className='pb-10 px-3 md:px-4 max-w-7xl mx-auto'>
                 <p className='font-semibold text-[1.35rem] mt-4'>
@@ -28,7 +28,7 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
                 </ul>
             </main>
             <SanityLive />
-        </>
+        </div>
     )
 };
 

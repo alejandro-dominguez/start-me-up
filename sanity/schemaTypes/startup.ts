@@ -10,14 +10,12 @@ export const startup = defineType({
     fields: [
         defineField({
             name: 'title',
-            type: 'string',
+            type: 'string'
         }),
         defineField({
             name: 'slug',
             type: 'slug',
-            options: {
-                source: 'title'
-            }
+            options: { source: 'title' }
         }),
         defineField({
             name: 'author',
@@ -26,11 +24,11 @@ export const startup = defineType({
         }),
         defineField({
             name: 'views',
-            type: 'number',
+            type: 'number'
         }),
         defineField({
             name: 'description',
-            type: 'text',
+            type: 'text'
         }),
         defineField({
             name: 'category',
@@ -49,11 +47,11 @@ export const startup = defineType({
         }),
         defineField({
             name: 'pitch',
-            type: 'markdown',
+            type: 'markdown'
         }),
         defineField({
             name: 'approved',
-            type: 'boolean',
-        }),
-    ],
+            type: 'boolean'
+        })
+    ]
 });

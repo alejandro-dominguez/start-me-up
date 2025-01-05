@@ -21,82 +21,18 @@ body {
 
     .profile-title {
         @apply bg-white border-[5px] border-black rounded-[20px] px-5 py-3 absolute
-        -top-9 after:absolute after:content-[''] after:-top-1 after:right-0 after:-skew-y-6
+        -top-10 after:absolute after:content-[''] after:-top-1 after:right-0 after:-skew-y-[7deg]
         after:bg-secondary-100 after:-z-[1] after:rounded-[20px] after:w-full after:h-[60px]
-        before:absolute before:content-[''] before:-bottom-1 before:left-0 before:-skew-y-6
+        before:absolute before:content-[''] before:-bottom-1 before:left-0 before:-skew-y-[7deg]
         before:w-full before:h-[60px] before:bg-secondary-100 before:-z-[1]
         before:rounded-[20px] shadow-100 before:shadow-sm before:shadow-black/10;
     }
 }
 
 @layer utilities {
-    .flex-between {
-        @apply flex justify-between items-center;
-    }
-
-    .text-30-extrabold {
-        @apply text-[30px] font-extrabold text-white;
-    }
-
-    .text-30-bold {
-        @apply text-[30px] font-bold text-black;
-    }
-
-    .text-30-semibold {
-        @apply font-semibold text-[30px] text-black;
-    }
-
-    .text-26-semibold {
-        @apply font-semibold text-[26px] text-black;
-    }
-
-    .text-24-black {
-        @apply text-[24px] font-black text-black;
-    }
-
-    .text-20-medium {
-        @apply font-medium text-[20px] text-black;
-    }
-
-    .text-16-medium {
-        @apply font-medium text-[16px] text-black;
-    }
-
-    .text-14-normal {
-        @apply font-normal text-sm text-white-100/80;
-    }
-
-    .card-grid-sm {
-        @apply grid sm:grid-cols-2 gap-5;
-    }
-    
-    /* navbar */
-
-    .avatar {
-        @apply p-0 focus-visible:ring-0 bg-none rounded-full drop-shadow-md !important;
-    }
-
     .dropdown-menu {
         @apply w-56 border-[5px] border-black bg-white p-5 rounded-2xl !important;
     }
-
-    .login {
-        @apply border-[5px] py-4 border-black bg-white text-black relative shadow-100
-		font-work-sans font-medium hover:shadow-none transition-all duration-500 !important;
-    }
-
-    /* startupcard */
-    
-    .startup-card-skeleton {
-        @apply w-full h-96 rounded-[22px] bg-zinc-400;
-    }
-
-    /*
-    .startup-form-editor {
-        @apply mt-3 border-[3px] border-black text-[18px] text-black font-semibold
-        placeholder:text-black-300 !important;
-    }
-*/
 
     .pattern {
         background-image: linear-gradient(

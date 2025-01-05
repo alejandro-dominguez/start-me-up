@@ -175,19 +175,22 @@ const CreateStartUpForm = () => {
                 <Button
                     type='submit'
                     className='bg-[#ff2067] border-[3.75px] border-black rounded-full
-                    p-6 font-bold text-lg text-white self-center mt-4 hover:bg-[#ff0051]
-                    transition-colors shadow-sm shadow-black/20 w-full md:w-72'
+                    text-white self-center mt-4 hover:bg-[#ff0051] transition-colors
+                    shadow-sm shadow-black/20 w-[296px] py-6'
                     disabled={isPending}
                 >
-                    <span className='drop-shadow'>
-                        {
-                            isPending ?
-                                'Submitting'
-                            :
-                                'Submit Your Startup'
-                        }
-                    </span>
-                    <Send className='size-6 ml-2 drop-shadow'/>
+                    <div className='relative w-full h-full grid place-items-center'>
+                        <span className='font-bold drop-shadow text-lg absolute left-6'>
+                            {
+                                isPending ?
+                                    'Submitting'
+                                :
+                                    'Submit Your Startup'
+                            }
+                        </span>
+                        <Send className='absolute drop-shadow scale-150 text-secondary-100
+                        -top-[.4rem] right-6' />
+                    </div>
                 </Button>
             </main>
         </Form>

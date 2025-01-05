@@ -13,10 +13,6 @@ export const formatDate = (date: string) => {
     })
 };
 
-export const shortenUsername = (input: string | null | undefined) => {
-    return input ? input.split(' ')[0] : '';
-};
-
 export const parseServerActionResponse = <T>(response: T) => {
     return JSON.parse(JSON.stringify(response))
 };

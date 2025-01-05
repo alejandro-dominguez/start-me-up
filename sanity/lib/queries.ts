@@ -40,7 +40,7 @@ export const STARTUP_BY_ID_QUERY = defineQuery(
         description,
         category,
         image,
-        pitch,
+        pitch
     }`
 );
 
@@ -56,7 +56,7 @@ export const AUTHOR_BY_GOOGLE_EMAIL_QUERY = defineQuery(`
         _id,
         name,
         email,
-        image,
+        image
     }`
 );
 
@@ -65,6 +65,51 @@ export const AUTHOR_BY_ID_QUERY = defineQuery(`
         _id,
         name,
         email,
-        image,
+        image
+    }`
+);
+
+export const STARTUPS_BY_AUTHOR_QUERY = defineQuery(`
+    *[_type == 'startup' && author._ref == $id] | order(_createdAt desc){
+        _id, 
+        title, 
+        slug,
+        _createdAt,
+        author->{
+            _id,
+            name,
+            image,
+            email
+        }, 
+        views,
+        description,
+        category,
+        image
+    }`
+);
+
+export const PLAYLIST_QUERY = defineQuery(`
+    *[_type == 'playlist'][0]{
+        _id,
+        title,
+        slug,
+        select[]->{
+            _id,
+            _createdAt,
+            title,
+            slug,
+            author->{
+                _id,
+                name,
+                slug,
+                image,
+                bio
+            },
+            views,
+            description,
+            category,
+            image,
+            pitch
+        }
     }`
 );

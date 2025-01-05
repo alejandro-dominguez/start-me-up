@@ -5,12 +5,6 @@ import StartUpCardImg from './startUpCardComponents/StartUpCardImg';
 import StartUpCardBottom from './startUpCardComponents/StartUpCardBottom';
 
 const StartUpCard = ({ post }: { post: StartUpSchemaType }) => {
-    const {
-        _createdAt,
-        author,
-        _id,
-    } = post
-    
     return (
         <>
         {
@@ -19,24 +13,24 @@ const StartUpCard = ({ post }: { post: StartUpSchemaType }) => {
                 shadow-200 hover:border-primary hover:shadow-300 hover:bg-primary-100
                 transition-all ease-linear duration-200'>
                     <StartUpCardTop
-                        id={_id}
-                        createdAt={_createdAt}
+                        id={post._id}
+                        createdAt={post._createdAt}
                         views={post?.views}
                     />
                     <StartUpCardMainInfo
-                        authorId={author?._id}
-                        authorImage={author?.image}
-                        name={author?.name}
-                        id={_id}
+                        authorId={post.author?._id}
+                        authorImage={post.author?.image}
+                        name={post.author?.name}
+                        id={post._id}
                         title={post?.title}
                         desc={post?.description}
                     />
                     <StartUpCardImg
-                        id={_id}
+                        id={post._id}
                         img={post?.image}
                     />
                     <StartUpCardBottom
-                        id={_id}
+                        id={post._id}
                         category={post?.category}
                     />
                 </li>

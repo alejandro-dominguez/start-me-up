@@ -1,15 +1,15 @@
 import { StartUpSchemaType } from '@/types';
 import StartUpCard from '@/components/StartUpCard';
 
-const StartupsContainer = ({ posts }: { posts?: [StartUpSchemaType] }) => {
+const StartupsContainer = ({ posts }: { posts: [StartUpSchemaType] }) => {
     return (
         <>
         {
-            posts?.length ?
+            posts.length ?
                 posts.map((post: StartUpSchemaType) => {
                     return (
                         <StartUpCard
-                            key={post?._id}
+                            key={post._id}
                             post={post}
                         />
                     )

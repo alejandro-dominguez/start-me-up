@@ -18,17 +18,17 @@ const StartUpCardMainInfo = ({
 }) => {
     return (
         <>
-        <div className='flex-between mt-3 gap-5'>
+        <div className='flex justify-between items-center mt-3 gap-5'>
             <div className='flex-1'>
                 <Link
                     href={`/user/${authorId}`}
-                    className='text-16-medium line-clamp-1 -mt-1'
+                    className='font-medium text-base text-black line-clamp-1 -mt-1'
                 >
                     {name}
                 </Link>
                 <Link
                     href={`/startup/${id}`}
-                    className='text-26-semibold line-clamp-1 mt-1'
+                    className='font-semibold text-2xl text-black line-clamp-1 mt-1'
                 >
                     {title}
                 </Link>

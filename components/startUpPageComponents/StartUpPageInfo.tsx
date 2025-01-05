@@ -23,7 +23,7 @@ const StartUpPageInfo = ({ post }: { post: StartUpSchemaType }) => {
                         className='rounded-full drop-shadow-lg'
                     />
                     <div className='sm:space-x-2 flex flex-col sm:flex-row items-start sm:items-center'>
-                        <span className='text-20-medium mt-3 sm:mt-0 leading-6'>
+                        <span className='font-medium text-xl text-black mt-3 sm:mt-0 leading-6'>
                             {post.author?.name}
                         </span>
                     </div>
@@ -32,7 +32,7 @@ const StartUpPageInfo = ({ post }: { post: StartUpSchemaType }) => {
                     {post.category}
                 </span>
             </div>
-            <h3 className='text-30-bold mt-3'>
+            <h3 className='text-3xl font-bold text-black mt-3'>
                 Pitch Details
             </h3>
             {

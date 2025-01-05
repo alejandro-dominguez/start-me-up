@@ -13,7 +13,7 @@ const StartUpCardTop = ({
 }) => {
     return (
         <Link
-            className='flex-between'
+            className='flex justify-between items-center'
             href={`/startup/${id}`}
         >
             <span className='font-normal text-base line-clamp-1'>
@@ -21,7 +21,7 @@ const StartUpCardTop = ({
             </span>
             <div className='flex gap-1.5'>
                 <EyeIcon className='size-6 text-primary' />
-                <span className='text-16-medium'>
+                <span className='font-medium text-base text-black'>
                     {views}
                 </span>
             </div>

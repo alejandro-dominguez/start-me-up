@@ -7,11 +7,12 @@ const Navbar = async () => {
     const session = await auth()
     
     return (
-        <header className='px-3 md:px-4 lg:px-10 bg-white shadow-sm min-h-[4.5rem]
+        <header className='px-3 md:px-4 lg:px-10 bg-slate-100/30 shadow-sm min-h-[6.5rem] xs:min-h-[4.5rem]
         md:min-h-16 flex items-center'>
-            <nav className='flex justify-between items-center py-3 w-full gap-7'>
+            <nav className='grid grid-rows-2 xs:flex xs:justify-between xs:items-center
+            py-3 w-full xs:gap-7'>
                 <NavLogo />
-                <ul className='flex items-center text-black text-[.95rem] md:text-base gap-4 md:gap-5'>
+                <ul className='w-full justify-between xs:w-fit flex items-center text-black text-[.95rem] md:text-base gap-4 md:gap-5'>
                     {
                         session && session?.user ? 
                             <NavUserUl session={session} />

@@ -1,22 +1,22 @@
+import {
+    BadgePlus,
+    LogOut
+} from 'lucide-react';
 import { Session } from 'next-auth';
 import { signOut } from '@/auth';
-import { shortenUsername } from '@/lib/utils';
 import Link from 'next/link';
 
 const NavUserUl = ({ session }: { session: Session }) => {
     return (
     <>
-        <li className='max-w-min sm:max-w-max'>
-            <Link href='/startup/create'>
-                <span>
+        <li>
+            <Link
+                href='/startup/create'
+                className='flex items-center gap-[.3rem]'
+            >
+                <BadgePlus className='size-6' />
+                <span className='font-medium tracking-[.01em]'>
                     Crear Artículo
-                </span>
-            </Link>
-        </li>
-        <li className='max-w-min'>
-            <Link href={`/user/${session.user?.id}`}>
-                <span>
-                    {shortenUsername(session.user?.name)}
                 </span>
             </Link>
         </li>
@@ -27,10 +27,25 @@ const NavUserUl = ({ session }: { session: Session }) => {
                     redirectTo: '/'
                 })
             }}>
-                <button type='submit'>
-                    Logout
+                <button
+                    type='submit'
+                    className='flex items-center gap-1'
+                >
+                    <LogOut className='size-[1.38rem] text-red-600' />
+                    <span className='font-medium tracking-[.01em]'>
+                        Logout
+                    </span>
                 </button>
             </form>
+        </li>
+        <li>
+            <Link href={`/user/${session?.id}`}>
+                <img
+                    className='size-10 rounded-full shadow shadow-black/50'
+                    src={session?.user?.image || 'https://placehold.co/200x200.png'}
+                    alt={session?.user?.name || 'imagen de usuario'}
+                />
+            </Link>
         </li>
     </>
     )
