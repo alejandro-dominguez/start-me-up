@@ -21,7 +21,7 @@ const HomeStartUpsContainer = async ({ searchBarQuery }: { searchBarQuery?: stri
                 })
             :
                 <p className='text-black-100 text-sm font-normal'>
-                    No startups found
+                    No se encontraron artículos relacionados
                 </p>
         }
         </>

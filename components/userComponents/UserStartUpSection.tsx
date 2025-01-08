@@ -2,17 +2,18 @@ import { Suspense } from 'react';
 import { StartUpSchemaType } from '@/types';
 import UserStartUpCardSkeleton from './UserStartUpCardSkeleton';
 import UserStartUpCard from '../cards/UserStartUpCard';
+import { auth } from '@/auth';
 
-const UserStartUpSection = (
-    {
-        id,
-        session,
-        posts
-    }:{
-        id: string,
-        session: { id: string},
-        posts: StartUpSchemaType[]
-    }) => {
+const UserStartUpSection = async (
+{
+    id,
+    posts
+}:{
+    id: string,
+    posts: StartUpSchemaType[]
+}) => {
+    const session = await auth()
+    
     return (
         <div className='flex flex-col gap-5 mt-4 lg:mt-0'>
             <p className='text-2xl font-bold text-black pl-2 lg:pl-0 tracking-[.01em]
@@ -33,7 +34,7 @@ const UserStartUpSection = (
                             })
                         :
                             <p className='text-black-100 text-sm font-normal'>
-                                No posts yet
+                                Todavía no hay artículos
                             </p>
                     }
                 </Suspense>
