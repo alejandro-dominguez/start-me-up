@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { mainMetadata } from '@/metadata';
 import localFont from 'next/font/local';
 import './globals.css';
 import 'easymde/dist/easymde.min.css';
@@ -54,11 +55,7 @@ const workSans = localFont({
     variable: '--font-work-sans',
 });
 
-export const metadata: Metadata = {
-    title: 'Start Me Up',
-    description: 'Pitch, Vote and Grow',
-    keywords: 'YC, Y Combinator, Directory, Startups, Pitch, Vote, Grow'
-};
+export const metadata: Metadata = mainMetadata;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
@@ -67,5 +64,5 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 {children}
             </body>
         </html>
-    );
+    )
 };

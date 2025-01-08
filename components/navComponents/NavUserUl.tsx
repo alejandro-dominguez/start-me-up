@@ -38,7 +38,7 @@ const NavUserUl = ({ session }: { session: Session }) => {
                 </button>
             </form>
         </li>
-        <li className='bg-black rounded-full p-[.15rem]'>
+        <li className='bg-black rounded-full p-[.18rem]'>
             <Link href={`/user/${session?.id}`}>
                 <img
                     className='size-10 rounded-full'

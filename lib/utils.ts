@@ -23,3 +23,12 @@ export const formatDate = (date: string): string => {
 export const parseServerActionResponse = <T>(response: T) => {
     return JSON.parse(JSON.stringify(response))
 };
+
+export const isNonEmptyObject = (value: unknown): boolean => {
+    return (
+        typeof value === 'object' &&
+        value !== null &&
+        !Array.isArray(value) &&
+        Object.keys(value).length > 0
+    )
+};

@@ -1,30 +1,27 @@
-import {
-    PLAYLIST_QUERY,
-    STARTUP_BY_ID_QUERY
-} from '@/sanity/lib/queries';
+import type { Metadata } from 'next';
+import { mainMetadata } from '@/metadata';
+import { STARTUP_BY_ID_QUERY } from '@/sanity/lib/queries';
 import { client } from '@/sanity/lib/client';
-import { notFound } from 'next/navigation';
 import StartUpPageContainer from '@/containers/StartUpPageContainer';
-import EditorStartUpsContainer from '@/containers/EditorStartUpsContainer';
 
 export const experimental_ppr = true;
 
-const StartUpPage = async ({ params } : { params: Promise<{ id: string }> }) => {
-    const id = (await params).id
-    const [ post, editorPosts ] = await Promise.all([
-        client.fetch(STARTUP_BY_ID_QUERY, { id }),
-        client.fetch(PLAYLIST_QUERY)
-    ])
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+    const { id } = await params
+    const post = await client.fetch(STARTUP_BY_ID_QUERY, { id })
 
-    if (!post || !editorPosts) return notFound()
+    return {
+        ...mainMetadata,
+        title: post? `${post.title} | ${post.author.name} | Start Me Up` : 'Artículo | Start Me Up',
+    }
+};
+
+const StartUpPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+    const id = (await params).id
 
     return (
         <div className='min-h-[100svh] bg-slate-100/50'>
-            <StartUpPageContainer
-                post={post}
-                id={id}
-            />
-            <EditorStartUpsContainer editorPosts={editorPosts} />
+            <StartUpPageContainer id={id} />
         </div>
     )
 };

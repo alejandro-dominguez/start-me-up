@@ -2,7 +2,7 @@ import { StartUpSchemaType } from '@/types';
 import { Suspense } from 'react';
 import { Skeleton } from '../ui/skeleton';
 import StartUpPageInfo from './StartUpPageInfo';
-import ViewCounter from '../ViewCounter';
+import ViewCounter from '@/components/startUpPageComponents/ViewCounter';
 
 const StartUpPageMain = ({
     post,

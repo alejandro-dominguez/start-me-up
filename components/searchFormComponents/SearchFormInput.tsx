@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { Search } from 'lucide-react';
 import SearchFormReset from './SearchFormReset';
 
-const SearchFormInput = ({ query }: { query?: string | '' }) => {
+const SearchFormInput = ({ searchBarQuery }: { searchBarQuery?: string | '' }) => {
     const [ isEmpty, setIsEmpty ] = useState<boolean>(true)
 
     return (
         <>
         <input
             name='query'
-            defaultValue={query}
+            defaultValue={searchBarQuery}
             className='font-bold placeholder:font-semibold placeholder:text-black-100
             w-full h-auto outline-none flex-1'
             placeholder='Busca Startups'
@@ -19,7 +19,7 @@ const SearchFormInput = ({ query }: { query?: string | '' }) => {
         />
         <div className='flex gap-2'>
             {
-                query ?
+                searchBarQuery ?
                     <SearchFormReset />
                 :
                     null

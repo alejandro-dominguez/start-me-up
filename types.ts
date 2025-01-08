@@ -1,18 +1,29 @@
-import {
-    Author,
-    Slug,
-    Startup
-} from './sanity/types';
+import { Slug } from './sanity/types';
 
-export type StartUpSchemaType = Omit<Startup, 'author'> & {author?: Author};
+export type StartUpSchemaType = {
+        _id: string,
+        _type: 'startup',
+        _createdAt: string,
+        title?: string,
+        slug?: Slug,
+        author?: {
+            _id: string,
+            name?: string,
+            email?: string,
+            image?: string,
+        },
+        views?: number,
+        description?: string,
+        category?: string,
+        image?: string,
+        pitch?: string,
+        approved?: true
+};
 
 export type PlaylistSchemaType = {
     _id: string;
     title: string;
-    slug: {
-      current: string;
-      _type: 'slug';
-    };
+    slug: Slug;
     select: PlaylistStartupType[];
 };
 

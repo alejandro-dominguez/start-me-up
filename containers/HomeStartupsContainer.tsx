@@ -1,11 +1,16 @@
 import { StartUpSchemaType } from '@/types';
 import StartUpCard from '@/components/cards/StartUpCard';
+import { STARTUPS_QUERY } from '@/sanity/lib/queries';
+import { sanityFetch } from '@/sanity/lib/live';
 
-const StartUpsContainer = ({ posts }: { posts: [StartUpSchemaType] | null }) => {
+const HomeStartUpsContainer = async ({ searchBarQuery }: { searchBarQuery?: string | '' }) => {
+    const params = { search: searchBarQuery || null }
+    const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params })
+    
     return (
         <>
         {
-            posts?.length ?
+            posts.length ?
                 posts.map((post: StartUpSchemaType) => {
                     return (
                         <StartUpCard
@@ -23,4 +28,4 @@ const StartUpsContainer = ({ posts }: { posts: [StartUpSchemaType] | null }) => 
     )
 };
 
-export default StartUpsContainer;
+export default HomeStartUpsContainer;

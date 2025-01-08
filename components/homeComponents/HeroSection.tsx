@@ -1,6 +1,6 @@
-import SearchForm from '../SearchForm';
+import SearchForm from '@/components/homeComponents/SearchForm';
 
-const HeroSection = ({ query }: { query?: string | '' }) => {
+const HeroSection = ({ searchBarQuery }: { searchBarQuery?: string | '' }) => {
     return (
         <section className='bg-primary pattern grid place-items-center
         pt-10 pb-6 md:pt-16 md:pb-10 px-3 md:px-6 shadow-sm'>
@@ -16,7 +16,7 @@ const HeroSection = ({ query }: { query?: string | '' }) => {
             mt-3 drop-shadow leading-7'>
                 ¡Comparte Ideas, Busca Proyectos y Hazte Notar!
             </h2>
-            <SearchForm query={query} />
+            <SearchForm searchBarQuery={searchBarQuery} />
         </section>
     )
 };
