@@ -28,11 +28,12 @@ const StartUpCard = ({ post }: { post: StartUpSchemaType }) => {
                     <StartUpCardImg
                         id={post._id}
                         img={post?.image}
-                        editor={false}
+                        isEditor={false}
                     />
                     <StartUpCardBottom
                         id={post._id}
                         category={post?.category}
+                        isUserCard={false}
                     />
                 </li>
             :

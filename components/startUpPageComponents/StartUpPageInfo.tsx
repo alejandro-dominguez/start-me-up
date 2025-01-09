@@ -13,14 +13,15 @@ const StartUpPageInfo = ({ post }: { post: StartUpSchemaType }) => {
             <div className='flex'>
                 <Link
                     href={`/user/${post.author?._id}`}
-                    className='flex gap-4 sm:items-center items-end mt-2'
+                    className='flex gap-3 sm:items-center items-end mt-2'
                 >
                     <Image
                         src={post.author?.image || 'https://placehold.co/600x400.png'}
                         alt='avatar'
                         width={60}
                         height={60}
-                        className='rounded-full shadow shadow-black/20'
+                        className='saturate-[1.25] brightness-110 contrast-[1.1]
+                        rounded-full drop-shadow-[0_0_1px_rgba(0,0,0,0.5)]'
                     />
                     <div className='sm:space-x-2 flex flex-col sm:flex-row
                     items-start sm:items-center'>

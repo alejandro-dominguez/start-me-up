@@ -52,17 +52,17 @@ const StartUpPageContainer = async ({ id }: { id: string }) => {
                         post={post}
                         id={id}
                     />
-                    <div className='max-w-4xl mx-auto px-3 md:px-6 lg:px-0 pb-10 mb-4'>
+                    <div className='max-w-4xl mx-auto px-4 md:px-2 lg:px-0 pb-10 mb-4 w-full'>
                         {
                             playlistPosts.length ?
                                 <h3 className='font-semibold text-xl text-black lg:px-0'>
-                                    Artículos seleccionados:
+                                    Artículos seleccionados para vos:
                                 </h3>
                             :
                                 null
                         }
                         <ul className='mt-5 grid grid-cols-1 sm:grid-cols-2
-                        lg:grid-cols-3 gap-8 md:gap-4 lg:gap-5'>
+                        lg:grid-cols-3 gap-8 md:gap-4 lg:gap-5 w-full'>
                             <Suspense fallback={<EditorStartUpCardSkeleton />}>
                                 {
                                     playlistPosts.length ?

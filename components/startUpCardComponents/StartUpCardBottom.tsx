@@ -5,12 +5,21 @@ import Link from 'next/link';
 const StartUpCardBottom = ({
     category,
     id,
+    isUserCard
 } : {
     category?: string,
     id: string,
+    isUserCard: boolean,
 }) => {
     return (
-        <div className='flex justify-between items-center mt-[1.2rem]'>
+        <div className=
+            {
+                !isUserCard ?
+                    'flex justify-between items-center mt-[1.2rem]'
+                :
+                    'flex flex-col mt-4 lg:mt-[.8rem] gap-4 lg:gap-[.8rem]'
+            }
+        >
             <Link
                 href={`/?query=${category?.toLowerCase()}`}
                 className='font-medium flex items-center gap-1'
@@ -26,7 +35,7 @@ const StartUpCardBottom = ({
             </Link>
             <Button
                 className='rounded-full bg-black-200 text-[.95rem]
-                text-white shadow-sm shadow-black/30'
+                text-white shadow-sm shadow-black/20'
                 asChild
             >
                 <Link href={`/startup/${id}`}>

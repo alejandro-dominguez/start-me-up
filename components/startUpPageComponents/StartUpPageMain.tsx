@@ -12,12 +12,12 @@ const StartUpPageMain = ({
     id: string
 }) => {
     return (
-        <main className='px-3 md:px-6 pt-5 md:pt-7 max-w-7xl mx-auto'>
+        <main className='px-4 md:px-6 pt-5 md:pt-7 max-w-7xl mx-auto'>
             <img
                 src={post.image}
                 alt='imagen de portada del artículo'
                 className='w-full max-h-[28rem] rounded-lg object-cover object-center
-                shadow-sm shadow-black/50'
+                shadow-sm shadow-black/30'
             />
             <StartUpPageInfo post={post} />
             <hr className='border-dotted bg-zinc-400 max-w-4xl my-6 mx-auto' />

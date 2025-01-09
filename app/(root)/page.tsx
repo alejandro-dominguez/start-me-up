@@ -10,7 +10,7 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
     return (
         <div className='min-h-[100svh] bg-slate-200/20'>
             <HeroSection searchBarQuery={searchBarQuery} />
-            <main className='pb-10 px-3 md:px-4 max-w-7xl mx-auto'>
+            <main className='pb-10 px-4 max-w-7xl mx-auto'>
                 {
                     searchBarQuery ?
                         <p className='font-semibold text-[1.35rem] mt-2 md:mt-[1.12rem]
@@ -27,7 +27,7 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
                             </span>
                         </p>
                     :
-                        <p className='font-semibold text-[1.35rem] mt-2 md:mt-[1.12rem]
+                        <p className='font-semibold text-[1.35rem] mt-3 sm:mt-6
                         flex flex-col md:flex-row items-center justify-between'>
                             <span>
                                 Todas las Startups:
@@ -45,7 +45,7 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
                         </p>
                 }
                 <ul className='relative grid grid-cols-1 sm:grid-cols-2
-                lg:grid-cols-3 gap-8 lg:gap-10 mt-4'>
+                lg:grid-cols-3 gap-8 lg:gap-10 mt-2 sm:mt-5'>
                     <HomeStartUpsContainer searchBarQuery={searchBarQuery} />
                 </ul>
             </main>

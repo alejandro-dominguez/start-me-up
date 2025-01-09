@@ -3,11 +3,11 @@ import Link from 'next/link';
 const StartUpCardImg = ({
     img,
     id,
-    editor
+    isEditor
 } : {
     img?: string,
     id: string,
-    editor: boolean
+    isEditor: boolean
 }) => {
     return (
         <Link href={`/startup/${id}`}>
@@ -16,7 +16,7 @@ const StartUpCardImg = ({
                 alt='imagen de portada del artículo'
                 className=
                     {
-                        !editor ?
+                        !isEditor ?
                             `max-h-44 rounded-[10px] object-cover object-center w-full
                             shadow-sm shadow-black/30`
                         :

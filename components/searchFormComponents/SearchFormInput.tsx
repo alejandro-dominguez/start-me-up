@@ -28,8 +28,8 @@ const SearchFormInput = ({ searchBarQuery }: { searchBarQuery?: string | '' }) =
             <button
                 type='submit'
                 className='rounded-full bg-secondary-100 grid place-items-center
-                size-9 text-black shadow-sm shadow-black/30 md:mr-3 transition-all
-                duration-200 ease-out hover:bg-secondary-200 hover:shadow-black/35'
+                size-9 text-black shadow-sm shadow-black/20 md:mr-3 transition-all
+                duration-200 ease-out hover:bg-secondary-200 hover:shadow-black/30'
                 disabled={isEmpty}
             >
                 <Search className='size-6 drop-shadow'/>

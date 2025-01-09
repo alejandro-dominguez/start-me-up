@@ -17,7 +17,7 @@ const UserContainer = async ({ id }: { id: string }) => {
         <>
         {
             user ?
-                <main>
+                <main className='flex flex-col md:flex-row px-4 lg:px-10'>
                     <UserCard user={user} />
                     <UserStartUpSection id={id} posts={posts} />
                 </main>

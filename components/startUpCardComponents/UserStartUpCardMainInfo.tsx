@@ -7,12 +7,12 @@ const StartUpCardMainInfo = ({
 } : {
     authorId?: string,
     id: string,
-    title?: string
+    title?: string,
     desc?: string
 }) => {
     return (
         <>
-        <div className='flex justify-between items-center mt-1 gap-5'>
+        <div className='flex justify-between items-center gap-5 mt-[.09rem]'>
             <div className='flex-1'>
                 <Link
                     href={`/startup/${id}`}
@@ -25,7 +25,7 @@ const StartUpCardMainInfo = ({
             </div>
         </div>
         <Link href={`/startup/${id}`}>
-            <p className='font-normal text-base line-clamp-2 mt-[.35rem] mb-4
+            <p className='font-normal text-base line-clamp-2 mt-[.25rem] mb-[.85rem]
             text-black-100 break-all leading-[1.35rem]'>
                 {desc}
             </p>

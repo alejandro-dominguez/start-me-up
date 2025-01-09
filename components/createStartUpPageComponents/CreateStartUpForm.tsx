@@ -70,7 +70,7 @@ const CreateStartUpForm = () => {
     return (
         <Form
             action={formAction}
-            className='mx-auto mt-5 space-y-8 px-3 md:px-20 lg:px-44 pb-10'
+            className='mx-auto mt-5 space-y-8 px-4 md:px-20 lg:px-44 pb-10'
         >
             <main className='flex flex-col items-start justify-center gap-[.6rem]'>
                 <div className='grid grid-cols-1 md:grid-cols-3 w-full md:gap-8'>
@@ -85,7 +85,7 @@ const CreateStartUpForm = () => {
                             id='title'
                             name='title'
                             className='border-[3px] border-black px-4 py-[1.375rem] text-lg text-black
-                            font-semibold rounded-full mt-[.4rem] placeholder:text-black-300 bg-white'
+                            font-semibold rounded-full mt-[.65rem] placeholder:text-black-300 bg-white'
                             required
                             placeholder='Título de tu startup'
                         />
@@ -101,7 +101,7 @@ const CreateStartUpForm = () => {
                             id='category'
                             name='category'
                             className='border-[3px] border-black px-4 py-[1.375rem] text-lg text-black
-                            font-semibold rounded-full mt-[.4rem] placeholder:text-black-300 bg-white'
+                            font-semibold rounded-full mt-[.65rem] placeholder:text-black-300 bg-white'
                             required
                             placeholder='Tecnología, salud, economía, etc.'
                         />
@@ -124,7 +124,7 @@ const CreateStartUpForm = () => {
                             onChange={(value) => setPitch(value as string)}
                             aria-required={true}
                             preview='edit'
-                            className='mt-2 bg-white'
+                            className='mt-[.7rem] bg-white'
                             height={200}
                             style={{
                                 borderRadius: 20, overflow: 'hidden',
@@ -149,7 +149,7 @@ const CreateStartUpForm = () => {
                                 id='description'
                                 name='description'
                                 className='px-4 py-3 text-lg text-black font-semibold
-                                mt-[.4rem] placeholder:text-black-300 border-[3px]
+                                mt-[.65rem] placeholder:text-black-300 border-[3px]
                                 border-black rounded-[20px] min-h-28 bg-white'
                                 required
                                 placeholder='Descripción de tu startup'
@@ -166,7 +166,7 @@ const CreateStartUpForm = () => {
                                 id='image'
                                 name='image'
                                 className='border-[3px] border-black px-4 py-[1.375rem] text-lg text-black
-                                font-semibold rounded-full mt-[.4rem] placeholder:text-black-300 bg-white'
+                                font-semibold rounded-full mt-[.65rem] placeholder:text-black-300 bg-white'
                                 required
                                 placeholder='Url de portada'
                             />
