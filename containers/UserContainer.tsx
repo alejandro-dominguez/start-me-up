@@ -17,8 +17,7 @@ const UserContainer = async ({ id }: { id: string }) => {
         <>
         {
             user ?
-                <main className='pt-16 xs:pt-[4.5rem] mx-auto grid grid-cols-1 lg:grid-cols-2
-                px-3 md:px-6 lg:px-10 lg:gap-5'>
+                <main>
                     <UserCard user={user} />
                     <UserStartUpSection id={id} posts={posts} />
                 </main>

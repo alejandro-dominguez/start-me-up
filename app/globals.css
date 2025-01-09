@@ -46,4 +46,17 @@ body {
         background-position: center;
         background-repeat: repeat-x;
     }
+
+    .pattern-xs {
+        background-image: linear-gradient(
+            to right,
+            transparent 49.5%,
+            rgba(251, 232, 67, 0.2) 49.5%,
+            rgba(251, 232, 67, 0.6) 50.5%,
+            transparent 50.5%
+        );
+        background-size: 10% 100%;
+        background-position: center;
+        background-repeat: repeat-x;
+    }
 }

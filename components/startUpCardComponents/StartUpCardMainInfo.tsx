@@ -28,7 +28,7 @@ const StartUpCardMainInfo = ({
                 </Link>
                 <Link
                     href={`/startup/${id}`}
-                    className='font-semibold text-[1.65rem] text-black line-clamp-1'
+                    className='font-semibold text-[1.65rem] text-black line-clamp-1 mt-[.15rem]'
                 >
                     {title}
                 </Link>
@@ -39,7 +39,7 @@ const StartUpCardMainInfo = ({
                     alt='perfil del autor'
                     width={48}
                     height={48}
-                    className='rounded-full -mt-1 shadow-sm shadow-black/30'
+                    className='rounded-full shadow-sm shadow-black/30 mt-[.2rem]'
                 />
             </Link>
         </div>

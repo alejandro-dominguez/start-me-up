@@ -20,7 +20,7 @@ const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     const id = (await params).id
     
     return (
-        <div className='min-h-[100svh] bg-slate-100/50'>
+        <div className='min-h-[100svh] bg-slate-200/20'>
             <UserContainer id={id} />
         </div>
     )

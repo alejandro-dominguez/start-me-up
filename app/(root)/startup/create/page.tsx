@@ -16,7 +16,7 @@ const CreateStartUpPage = async () => {
     if (!session) redirect('/')
 
     return (
-        <div className='min-h-[100svh] bg-slate-100/50'>
+        <div className='min-h-[100svh] '>
             <CreateStartUpPageHero />
             <CreateStartUpForm />
         </div>

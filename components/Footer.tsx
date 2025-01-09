@@ -1,8 +1,6 @@
-import React from 'react';
-
 const Footer = () => {
     return (
-        <div className='bg-slate-100/50'>
+        <div className='bg-slate-200/20'>
             Footer
         </div>
     )

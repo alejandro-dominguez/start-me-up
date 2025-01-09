@@ -9,7 +9,7 @@ const StartUpPageHero = ({ post } : { post: StartUpSchemaType }) => {
     } = post
 
     return (
-        <section className='bg-primary pattern grid place-items-center
+        <section className='bg-primary pattern-xs md:pattern grid place-items-center
         pt-12 pb-7 px-3 md:px-6 shadow-sm'>
             <span className='bg-secondary-100 px-6 py-[.35rem] font-bold rounded-sm
             uppercase relative tag-decoration -mt-4 mb-[1.2rem] text-[.95rem] tracking-wide

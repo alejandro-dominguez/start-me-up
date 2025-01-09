@@ -9,9 +9,9 @@ const StartUpCard = ({ post }: { post: StartUpSchemaType }) => {
         <>
         {
             post?.approved ?
-                <li className='bg-white border-[5px] border-black pt-4 pb-5 px-5 rounded-[22px]
+                <li className='bg-white border-[5px] border-black pt-[1.2rem] pb-5 px-5 rounded-[22px]
                 shadow-200 hover:border-primary hover:shadow-300 hover:bg-primary-100
-                transition-all ease-linear duration-200'>
+                transition-all ease-out duration-200'>
                     <StartUpCardTop
                         id={post._id}
                         createdAt={post._createdAt}

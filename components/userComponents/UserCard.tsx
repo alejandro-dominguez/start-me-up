@@ -11,9 +11,9 @@ const UserCard = (
     }
 ) => {
     return (
-        <div className='pt-[3.75rem] xs:pt-[3.1rem] pb-5 xs:pb-7 flex flex-col justify-center
+        <div className='flex flex-col justify-center
         items-center bg-primary border-[5px] border-black shadow-100 max-h-[15.5rem]
-        rounded-[30px] relative z-0 md:min-w-[28.5rem] md:max-w-[28.5rem] mx-auto lg:mr-auto lg:ml-0'>
+        rounded-[30px] relative z-0'>
             <div className='profile-title'>
                 <h3 className='text-2xl font-black text-black uppercase tracking-[.01em] max-w-52
                 xs:max-w-80 md:min-w-[21.5rem] text-center leading-[1.6rem] xs:leading-normal'>
