@@ -6,11 +6,8 @@ const EditorStartUpCardSkeleton = () => {
         <>
         {
             [0, 1, 2, 3].map((i: number) => (
-                <li>
-                    <Skeleton
-                        key={cn('skeleton', i)}
-                        className='w-full h-96 rounded-[22px] bg-zinc-400'
-                    />
+                <li key={cn('skeleton', i)}>
+                    <Skeleton className='w-full h-96 rounded-[22px] bg-zinc-400' />
                 </li>
             ))
         }
