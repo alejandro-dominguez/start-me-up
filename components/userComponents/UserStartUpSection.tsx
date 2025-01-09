@@ -20,7 +20,7 @@ const UserStartUpSection = async (
             text-center md:text-start mt-4 mb-3 md:mt-0'>
                 {session?.id === id ? 'Tus' : 'Todas las'} Startups:
             </p>
-            <ul className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+            <ul className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                 <Suspense fallback={<UserStartUpCardSkeleton />}>
                     {
                         posts.length ?

@@ -18,7 +18,9 @@ const StartUpCardMainInfo = ({
                     href={`/startup/${id}`}
                     className='font-semibold text-[1.65rem] text-black line-clamp-1'
                 >
-                    {title}
+                    <h3>
+                        {title}
+                    </h3>
                 </Link>
             </div>
         </div>

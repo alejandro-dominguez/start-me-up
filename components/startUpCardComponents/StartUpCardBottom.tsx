@@ -1,20 +1,28 @@
+import { MousePointer2 } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 
 const StartUpCardBottom = ({
     category,
-    id
+    id,
 } : {
     category?: string,
-    id: string
+    id: string,
 }) => {
     return (
         <div className='flex justify-between items-center mt-[1.2rem]'>
-            <Link 
+            <Link
                 href={`/?query=${category?.toLowerCase()}`}
-                className='font-medium'
+                className='font-medium flex items-center gap-1'
             >
-                {category}
+                <span>
+                    {category}
+                </span>
+                <MousePointer2
+                    strokeWidth={1.75}
+                    size={20}
+                    className='mt-1'
+                />
             </Link>
             <Button
                 className='rounded-full bg-black-200 text-[.95rem]

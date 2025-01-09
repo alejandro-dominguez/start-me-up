@@ -5,7 +5,7 @@ import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';
 
 const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: string }> }) => {
     const searchBarQuery = (await searchParams).query
-   const session = await auth()
+    const session = await auth()
 
     return (
         <div className='min-h-[100svh] bg-slate-200/20'>
@@ -17,10 +17,11 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
                         flex flex-col md:flex-row items-center justify-between break-all'>
                             <span className='flex flex-col md:flex-row xs:gap-1 mx-auto md:ml-0
                             xs:items-baseline self-start leading-7 text-center mt-[.2rem]'>
-                                <span className='text-center mx-auto'>
+                                <span className='mx-auto'>
                                     Resultados para:
                                 </span>
-                                <span className='text-lg tracking-wide text-primary-200 -mt-1 md:-mt-0'>
+                                <span className='text-lg tracking-wide text-primary-200
+                                -mt-1 md:-mt-0 mx-auto'>
                                     {` "${searchBarQuery}"`}
                                 </span>
                             </span>
@@ -43,7 +44,10 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
                             }
                         </p>
                 }
-                <HomeStartUpsContainer searchBarQuery={searchBarQuery} />
+                <ul className='relative grid grid-cols-1 sm:grid-cols-2
+                lg:grid-cols-3 gap-8 lg:gap-10 mt-4'>
+                    <HomeStartUpsContainer searchBarQuery={searchBarQuery} />
+                </ul>
             </main>
             <SanityLive />
         </div>

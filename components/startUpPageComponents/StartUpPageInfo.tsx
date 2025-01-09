@@ -9,23 +9,23 @@ const StartUpPageInfo = ({ post }: { post: StartUpSchemaType }) => {
     const parsedContent = md.render(post.pitch || '')
 
     return (
-        <div className='mt-6 max-w-4xl mx-auto'>
+        <div className='mt-7 max-w-4xl mx-auto'>
             <div className='flex'>
                 <Link
                     href={`/user/${post.author?._id}`}
-                    className='flex gap-4 items-center'
+                    className='flex gap-4 sm:items-center items-end mt-2'
                 >
                     <Image
                         src={post.author?.image || 'https://placehold.co/600x400.png'}
                         alt='avatar'
-                        width={64}
-                        height={64}
+                        width={60}
+                        height={60}
                         className='rounded-full shadow shadow-black/20'
                     />
                     <div className='sm:space-x-2 flex flex-col sm:flex-row
                     items-start sm:items-center'>
-                        <span className='font-medium text-xl text-black mt-3 sm:mt-0
-                        leading-6 tracking-[.005em]'>
+                        <span className='font-medium text-xl text-black
+                        leading-6 tracking-[.005em] pr-5'>
                             {post.author?.name}
                         </span>
                     </div>
@@ -34,17 +34,17 @@ const StartUpPageInfo = ({ post }: { post: StartUpSchemaType }) => {
                     {post.category}
                 </span>
             </div>
-            <h3 className='text-3xl font-bold text-black mt-[.9rem] leading-8'>
+            <h3 className='text-3xl font-bold text-black mt-5 leading-8'>
                 Detalles de la Propuesta
             </h3>
             {
                 parsedContent ?
                     <article
-                        className='prose max-w-4xl break-all mt-[.9rem]'
+                        className='prose max-w-4xl break-all mt-4'
                         dangerouslySetInnerHTML={{ __html: parsedContent }}
                     />
                 :
-                    <p className='text-black-100 text-sm font-normal mt-[.9rem]'>
+                    <p className='text-black-100 text-sm font-normal mt-4'>
                         No details provided
                     </p>
             }

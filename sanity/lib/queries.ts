@@ -97,7 +97,6 @@ export const PLAYLIST_QUERY = defineQuery(`
             _createdAt,
             title,
             slug,
-            description,
             category,
             image,
             approved

@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { Skeleton } from '../ui/skeleton';
 
-const UserStartUpCardSkeleton = () => {
+const EditorStartUpCardSkeleton = () => {
     return (
         <>
         {
@@ -15,7 +15,7 @@ const UserStartUpCardSkeleton = () => {
             ))
         }
         </>
-    )
+    );
 };
 
-export default UserStartUpCardSkeleton;
+export default EditorStartUpCardSkeleton;

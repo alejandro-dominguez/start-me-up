@@ -30,7 +30,6 @@ export type PlaylistSchemaType = {
 export type PlaylistStartupType = {
     _id: string;
     title?: string;
-    description?: string;
     category?: string;
     slug?: Slug;
     image?: string;

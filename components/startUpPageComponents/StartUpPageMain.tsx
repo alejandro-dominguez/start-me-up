@@ -22,10 +22,11 @@ const StartUpPageMain = ({
             <StartUpPageInfo post={post} />
             <hr className='border-dotted bg-zinc-400 max-w-4xl my-6 mx-auto' />
             <Suspense
-                fallback={
-                    <Skeleton className='w-[101.92px] h-[37.77px] bg-zinc-400 flex
-                    justify-end items-center mt-5 fixed bottom-3 right-3' />
-                }
+                fallback=
+                    {
+                        <Skeleton className='w-[101.92px] h-[37.77px] bg-zinc-400 flex
+                        justify-end items-center mt-5 fixed bottom-3 right-3' />
+                    }
             >
                 <ViewCounter id={id} />
             </Suspense>

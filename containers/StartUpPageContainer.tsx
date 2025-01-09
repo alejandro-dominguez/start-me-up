@@ -9,9 +9,11 @@ import {
 import { client } from '@/sanity/lib/client';
 import { isNonEmptyObject } from '@/lib/utils';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 import StartUpPageHero from '@/components/startUpPageComponents/StartUpPageHero';
 import StartUpPageMain from '@/components/startUpPageComponents/StartUpPageMain';
 import EditorStartUpCard from '@/components/cards/EditorStartUpCard';
+import EditorStartUpCardSkeleton from '@/components/startUpPageComponents/EditorStartUpCardSkeleton';
 
 const StartUpPageContainer = async ({ id }: { id: string }) => {
     const [ post, playlist ] = await Promise.all([
@@ -24,7 +26,6 @@ const StartUpPageContainer = async ({ id }: { id: string }) => {
         {
             _id,
             title,
-            description,
             category,
             slug,
             image,
@@ -33,7 +34,6 @@ const StartUpPageContainer = async ({ id }: { id: string }) => {
         }) => ({
             _id,
             title,
-            description,
             category,
             slug,
             image,
@@ -52,14 +52,20 @@ const StartUpPageContainer = async ({ id }: { id: string }) => {
                         post={post}
                         id={id}
                     />
-                    {
-                        playlistPosts.length ?
-                            <div className='max-w-4xl mx-auto'>
-                                <h3 className='font-semibold text-xl text-black px-3 md:px-6 lg:px-0'>
+                    <div className='max-w-4xl mx-auto px-3 md:px-6 lg:px-0 pb-10 mb-4'>
+                        {
+                            playlistPosts.length ?
+                                <h3 className='font-semibold text-xl text-black lg:px-0'>
                                     Artículos seleccionados:
                                 </h3>
-                                <ul className='grid sm:grid-cols-2 gap-5 mt-4 px-3 md:px-6 lg:px-0'>
-                                    {
+                            :
+                                null
+                        }
+                        <ul className='mt-5 grid grid-cols-1 sm:grid-cols-2
+                        lg:grid-cols-3 gap-8 md:gap-4 lg:gap-5'>
+                            <Suspense fallback={<EditorStartUpCardSkeleton />}>
+                                {
+                                    playlistPosts.length ?
                                         playlistPosts.map((post: PlaylistStartupType) => {
                                             return (
                                                 <EditorStartUpCard
@@ -68,12 +74,12 @@ const StartUpPageContainer = async ({ id }: { id: string }) => {
                                                 />
                                             )
                                         })
-                                    }
-                                </ul>
-                            </div>
-                        :
-                            null
-                    }
+                                    :
+                                        null
+                                }
+                            </Suspense>
+                        </ul>
+                    </div>
                 </>
             :
                 notFound()

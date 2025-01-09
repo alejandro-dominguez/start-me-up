@@ -11,22 +11,20 @@ const HomeStartUpsContainer = async ({ searchBarQuery }: { searchBarQuery?: stri
         <>
         {
             posts.length ?
-                <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mt-4'>
-                    {
-                        posts.map((post: StartUpSchemaType) => {
-                            return (
-                                <StartUpCard
-                                    key={post._id}
-                                    post={post}
-                                />
-                            )
-                        })
-                    }
-                </ul>
+                posts.map((post: StartUpSchemaType) => {
+                    return (
+                        <StartUpCard
+                            key={post._id}
+                            post={post}
+                        />
+                    )
+                })
             :
-                <p className='text-black-100 font-normal text-center mt-1 md:text-start'>
-                    No se encontraron artículos relacionados.
-                </p>
+                <div className='absolute flex w-full text-black-100 font-normal -mt-2'>
+                    <span className='w-fit mx-auto md:ml-0'>
+                        No se encontraron artículos relacionados.
+                    </span>
+                </div>
         }
         </>
     )
