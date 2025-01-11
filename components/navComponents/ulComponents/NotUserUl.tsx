@@ -4,7 +4,7 @@ import { LogIn } from 'lucide-react';
 const NotUserUl = () => {
     return (
         <>
-            <li className='mx-auto pt-1'>
+            <li className='mx-auto'>
                 <form action={async () => {
                     'use server'
                     await signIn('google')

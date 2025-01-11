@@ -20,8 +20,8 @@ const HomeStartUpsContainer = async ({ searchBarQuery }: { searchBarQuery?: stri
                     )
                 })
             :
-                <div className='absolute flex w-full text-black-100 font-normal -mt-2'>
-                    <span className='w-fit mx-auto md:ml-0'>
+                <div className='absolute flex w-full text-black-100 font-normal'>
+                    <span className='w-fit mx-auto md:ml-0 text-center'>
                         No se encontraron artículos relacionados.
                     </span>
                 </div>

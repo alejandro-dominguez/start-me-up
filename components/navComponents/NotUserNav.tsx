@@ -3,11 +3,13 @@ import NotUserUl from './ulComponents/NotUserUl';
 
 const NotUserNav = () => {
     return (
-        <nav className='grid grid-rows-2 xs:flex xs:justify-between
-        xs:items-center pt-3 xs:pt-[.8rem] pb-[.85rem] xs:pb-[.55rem] w-full xs:gap-7'>
-            <NavLogo />
-            <ul className='w-full justify-between xs:w-fit flex items-center text-black
-            text-base gap-[.85rem] md:gap-5'>
+        <nav className='flex py-2 w-full relative h-[6.25rem] sm:h-16'>
+            <div className='absolute top-[.35rem] right-1/2 translate-x-1/2
+            sm:right-auto sm:translate-x-0'>
+                <NavLogo />
+            </div>
+            <ul className='mb-0 mt-12 mx-auto sm:ml-auto sm:mr-0 sm:mb-auto
+            sm:mt-auto w-fit text-black text-base'>
                 <NotUserUl />
             </ul>
         </nav>

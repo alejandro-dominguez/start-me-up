@@ -4,11 +4,13 @@ import UserUl from './ulComponents/UserUl';
 
 const UserNav = ({ session }: { session: Session }) => {
     return (
-        <nav className='grid grid-rows-2 xs:flex xs:justify-between
-        xs:items-center pt-3 pb-2 w-full xs:gap-7'>
-            <NavLogo />
-            <ul className='w-full justify-between xs:w-fit flex items-center text-black
-            text-base gap-[.85rem] md:gap-5 -mt-[.1rem] xs:-mt-0'>
+        <nav className='flex py-2 w-full relative h-[6.25rem] sm:h-16'>
+            <div className='absolute top-[.35rem] right-1/2 translate-x-1/2
+            sm:right-auto sm:translate-x-0'>
+                <NavLogo />
+            </div>
+            <ul className='mt-10 sm:mt-0 mx-auto sm:ml-auto sm:mr-0 w-full gap-[.85rem]
+            md:gap-5 justify-between xs:w-fit flex items-center text-black text-base'>
                 <UserUl session={session} />
             </ul>
         </nav>

@@ -52,6 +52,7 @@ const config: Config = {
             },
             animation: {
                 ping: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+                spinPulse: 'spin 2s linear infinite, pulse 1s linear infinite',
             }
         },
     },
