@@ -11,8 +11,8 @@ const SearchFormInput = ({ searchBarQuery }: { searchBarQuery?: string | '' }) =
         <input
             name='query'
             defaultValue={searchBarQuery}
-            className='font-bold placeholder:font-semibold w-full h-auto pr-3
-            outline-none flex-1 md:ml-3 placeholder:text-[#6d737b]'
+            className='font-bold placeholder:font-semibold w-full h-auto px-3 mr-3 xs:mr-4
+            outline-none flex-1 md:ml-3 placeholder:text-[#6d737b] rounded-xl'
             placeholder='Busca Startups'
             onInput={() => setIsEmpty(false)}
             required
