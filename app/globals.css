@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply min-h-[100svh] overflow-y-scroll font-work-sans;
+    @apply min-h-[100svh] overflow-y-scroll font-work-sans bg-[#F9FAFC];
 }
 
 @layer base {

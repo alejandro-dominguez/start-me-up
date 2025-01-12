@@ -19,7 +19,7 @@ const CreateStartUpPage = async () => {
 
     return (
         <Suspense fallback={<CreateStartUpPageSkeleton />}>
-            <div className='min-h-[100svh] bg-slate-200/20'>
+            <div className='min-h-[100svh] bg-[#F9FAFC]'>
                 <CreateStartUpPageHero />
                 <CreateStartUpForm />
             </div>

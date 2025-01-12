@@ -34,3 +34,10 @@ export const isNonEmptyObject = (value: unknown): boolean => {
         Object.keys(value).length > 0
     )
 };
+
+export const scrollTop = () => {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	})
+};

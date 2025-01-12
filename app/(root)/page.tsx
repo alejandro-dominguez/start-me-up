@@ -11,7 +11,7 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
     const session = await auth()
 
     return (
-        <div className='min-h-[100svh] bg-slate-200/20'>
+        <div className='min-h-[100svh] bg-[#F9FAFC]'>
             <HeroSection searchBarQuery={searchBarQuery} />
             <main className='pb-10 px-4 max-w-7xl mx-auto'>
                 <Suspense fallback={<Skeleton className='bg-slate-400 animate-pulse'/>}>

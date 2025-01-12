@@ -13,7 +13,7 @@ const ViewCounter = async ({ id }: { id: string }) => {
     )
 
     return (
-        <div className='flex justify-end items-center mt-5 fixed bottom-3 right-3'>
+        <div className='flex justify-end items-center mt-5 fixed bottom-3 right-3 z-10'>
             <div className='absolute -top-2 -right-2 z-10'>
                 <ViewPing />
             </div>

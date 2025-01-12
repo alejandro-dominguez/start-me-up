@@ -24,7 +24,7 @@ const StartUpCardBottom = ({
                 href={`/?query=${category?.toLowerCase()}`}
                 className='font-medium flex items-center gap-1'
             >
-                <span>
+                <span className='line-clamp-1 max-w-min'>
                     {category}
                 </span>
                 <MousePointer2
