@@ -33,8 +33,8 @@ const CreateStartUpForm = () => {
             const result = await createStartup(prevState, formData, pitch)
             if (result.status == 'SUCCESS') {
                 toast({
-                    title: 'Success',
-                    description: 'Your startup pitch has been created successfully',
+                    title: '¡Genial!',
+                    description: 'Tu propuesta de startup fue creada con éxito.',
                 })
                 router.push(`/startup/${result._id}`)
             }
@@ -43,7 +43,7 @@ const CreateStartUpForm = () => {
             if (error instanceof z.ZodError) {
                 toast({
                     title: 'Error',
-                    description: 'Please check your inputs and try again',
+                    description: 'Por favor revisa los datos utilizados e intenta de nuevo',
                     variant: 'destructive',
                 })
                 return {
@@ -184,7 +184,7 @@ const CreateStartUpForm = () => {
                         <span className='font-bold drop-shadow text-[1.3rem] absolute left-5 tracking-wide'>
                             {
                                 isPending ?
-                                    'Enviando'
+                                    'Enviando...'
                                 :
                                     'Enviar Tu Startup'
                             }

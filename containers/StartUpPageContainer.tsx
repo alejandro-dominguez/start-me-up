@@ -13,7 +13,7 @@ import { Suspense } from 'react';
 import StartUpPageHero from '@/components/startUpPageComponents/StartUpPageHero';
 import StartUpPageMain from '@/components/startUpPageComponents/StartUpPageMain';
 import EditorStartUpCard from '@/components/cards/EditorStartUpCard';
-import EditorStartUpCardSkeleton from '@/components/startUpPageComponents/EditorStartUpCardSkeleton';
+import StartUpCardSkeleton from '@/components/cards/StartUpCardSkeleton';
 
 const StartUpPageContainer = async ({ id }: { id: string }) => {
     const [ post, playlist ] = await Promise.all([
@@ -63,7 +63,7 @@ const StartUpPageContainer = async ({ id }: { id: string }) => {
                         }
                         <ul className='mt-5 grid grid-cols-1 sm:grid-cols-2
                         lg:grid-cols-3 gap-8 md:gap-4 lg:gap-5 w-full'>
-                            <Suspense fallback={<EditorStartUpCardSkeleton />}>
+                            <Suspense fallback={<StartUpCardSkeleton />}>
                                 {
                                     playlistPosts.length ?
                                         playlistPosts.map((post: PlaylistStartupType) => {

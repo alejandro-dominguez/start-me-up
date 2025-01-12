@@ -41,12 +41,12 @@ const StartUpPageInfo = ({ post }: { post: StartUpSchemaType }) => {
             {
                 parsedContent ?
                     <article
-                        className='prose max-w-4xl break-all mt-4'
+                        className='prose max-w-4xl break-all mt-6'
                         dangerouslySetInnerHTML={{ __html: parsedContent }}
                     />
                 :
                     <p className='text-black-100 text-sm font-normal mt-4'>
-                        No details provided
+                        No se han provisto detalles
                     </p>
             }
         </div>

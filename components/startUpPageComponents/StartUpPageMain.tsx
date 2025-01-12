@@ -17,7 +17,7 @@ const StartUpPageMain = ({
                 src={post.image}
                 alt='imagen de portada del artículo'
                 className='w-full max-h-[28rem] rounded-lg object-cover object-center
-                shadow-sm shadow-black/30'
+                shadow-sm shadow-black/10'
             />
             <StartUpPageInfo post={post} />
             <hr className='border-dotted bg-zinc-400 max-w-4xl my-6 mx-auto' />

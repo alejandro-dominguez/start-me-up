@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import { StartUpSchemaType } from '@/types';
 import { auth } from '@/auth';
-import UserStartUpCardSkeleton from './UserStartUpCardSkeleton';
 import UserStartUpCard from '../cards/UserStartUpCard';
+import StartUpCardSkeleton from '../cards/StartUpCardSkeleton';
 
 const UserStartUpSection = async (
 {
@@ -21,23 +21,21 @@ const UserStartUpSection = async (
                 {session?.id === id ? 'Tus' : 'Todas las'} Startups:
             </p>
             <ul className='grid grid-cols-1 lg:grid-cols-2 gap-7 pb-10'>
-                <Suspense fallback={<UserStartUpCardSkeleton />}>
-                    {
-                        posts.length ?
-                            posts.map((post: StartUpSchemaType) => {
-                                return (
-                                    <UserStartUpCard
-                                        key={post._id}
-                                        post={post}
-                                    />
-                                )
-                            })
-                        :
-                            <p className='text-black-100 text-sm font-normal'>
-                                Todavía no hay artículos
-                            </p>
-                    }
-                </Suspense>
+                {
+                    posts.length ?
+                        posts.map((post: StartUpSchemaType) => {
+                            return (
+                                <UserStartUpCard
+                                    key={post._id}
+                                    post={post}
+                                />
+                            )
+                        })
+                    :
+                        <p className='text-black-100 text-sm font-normal'>
+                            Todavía no hay artículos
+                        </p>
+                }
             </ul>
         </div>
     )

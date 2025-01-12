@@ -18,10 +18,10 @@ const StartUpCardImg = ({
                     {
                         !isEditor ?
                             `max-h-44 rounded-[10px] object-cover object-center w-full
-                            shadow-sm shadow-black/30`
+                            shadow-sm shadow-black/10`
                         :
                             `h-52 rounded-[10px] object-cover object-center w-full
-                            shadow-sm shadow-black/30`
+                            shadow-sm shadow-black/10`
                     }
             />
         </Link>

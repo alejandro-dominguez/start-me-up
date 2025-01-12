@@ -27,7 +27,7 @@ const UserCard = (
                     width={110}
                     height={110}
                     className='rounded-full object-cover object-center border-[5.5px]
-                    border-black shadow shadow-black/15'
+                    border-black shadow shadow-black/10'
                 />
                 <p className='font-bold text-white text-[1.05rem] xs:text-[1.4rem] mt-3
                 text-center drop-shadow md:min-w-fit line-clamp-1 px-3'>
