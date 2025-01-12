@@ -1,4 +1,5 @@
-import StartUpCardSkeleton from '../cards/StartUpCardSkeleton';
+import { cn } from '@/lib/utils';
+import { Skeleton } from '../ui/skeleton';
 
 const UserPageSkeleton = () => {
     return (
@@ -7,7 +8,13 @@ const UserPageSkeleton = () => {
             md:ml-0 md:mr-7 lg:mr-9 min-w-72 sm:min-w-[28rem] items-center bg-zinc-400 animate-pulse
             mx-auto border-[5px] border-black shadow-100 h-[15rem] rounded-[30px] relative z-0' />
             <ul className='grid grid-cols-1 lg:grid-cols-2 gap-7 pb-10'>
-                <StartUpCardSkeleton />
+                {
+                    [0, 1, 2, 3, 4, 5].map((i: number) => (
+                        <li key={cn('skeleton', i)}>
+                            <Skeleton className='w-full h-96 rounded-[22px] bg-zinc-400 animate-pulse' />
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     )
