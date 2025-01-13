@@ -9,7 +9,7 @@ import { Suspense } from 'react';
 import StartUpPageHero from '@/components/startUpPageComponents/StartUpPageHero';
 import StartUpPageMain from '@/components/startUpPageComponents/StartUpPageMain';
 import EditorStartUpCard from '@/components/cards/EditorStartUpCard';
-import StartUpCardSkeleton from '@/components/cards/StartUpCardSkeleton';
+import EditorStartUpCardSkeleton from '@/components/skeletonComponents/EditorStartUpCardSkeleton';
 
 const StartUpPageContainer = async (
     {
@@ -66,7 +66,7 @@ const StartUpPageContainer = async (
                         }
                         <ul className='mt-5 grid grid-cols-1 sm:grid-cols-2
                         lg:grid-cols-3 gap-8 md:gap-4 lg:gap-5 w-full'>
-                            <Suspense fallback={<StartUpCardSkeleton />}>
+                            <Suspense fallback={<EditorStartUpCardSkeleton />}>
                                 {
                                     playlistPosts.length ?
                                         playlistPosts.map((post: PlaylistStartupType) => {

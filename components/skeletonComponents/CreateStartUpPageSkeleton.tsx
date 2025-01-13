@@ -1,4 +1,4 @@
-import CreateStartUpPageHero from './CreateStartUpPageHero';
+import CreateStartUpPageHero from '../createStartUpPageComponents/CreateStartUpPageHero';
 
 const CreateStartUpPageSkeleton = () => {
     return (

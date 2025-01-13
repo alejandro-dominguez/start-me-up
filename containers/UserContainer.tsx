@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { StartUpSchemaType } from '@/types';
 import UserCard from '@/components/userComponents/UserCard';
 import UserStartUpSection from '@/components/userComponents/UserStartUpSection';
-import UserPageSkeleton from '@/components/userComponents/UserPageSkeleton';
+import UserPageSkeleton from '@/components/skeletonComponents/UserPageSkeleton';
 
 const UserContainer = (
     {

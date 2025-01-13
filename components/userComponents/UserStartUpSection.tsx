@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { StartUpSchemaType } from '@/types';
 import { auth } from '@/auth';
 import UserStartUpCard from '../cards/UserStartUpCard';
-import StartUpCardSkeleton from '../cards/StartUpCardSkeleton';
+import StartUpCardSkeleton from '../skeletonComponents/StartUpCardSkeleton';
 
 const UserStartUpSection = async (
     {

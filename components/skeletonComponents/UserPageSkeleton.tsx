@@ -11,11 +11,14 @@ const UserPageSkeleton = () => {
             text-center md:text-start mt-5 mb-4 md:mb-2 md:mt-0'>
                 Tus Startups:
             </p>
-            <ul className='grid grid-cols-1 lg:grid-cols-2 gap-7 pb-10'>
+            <ul className='flex flex-col lg:flex-row gap-7 pb-10'>
                 {
-                    [0, 1, 2, 3, 4, 5].map((i: number) => (
-                        <li key={cn('skeleton', i)}>
-                            <Skeleton className='w-full h-96 rounded-[22px] bg-zinc-400 animate-pulse' />
+                    [0, 1].map((i: number) => (
+                        <li className='list-none'
+                            key={cn('skeleton', i)}
+                        >
+                            <Skeleton className='w-[367px] h-[468.61px]
+                            rounded-[22px] bg-zinc-400 animate-pulse' />
                         </li>
                     ))
                 }

@@ -5,12 +5,13 @@ import { auth } from '@/auth';
 import { fetchPosts } from '@/lib/fetchRequests';
 import HeroSection from '@/components/homeComponents/HeroSection';
 import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';
-import StartUpCardSkeleton from '@/components/cards/StartUpCardSkeleton';
+import StartUpCardSkeleton from '@/components/skeletonComponents/StartUpCardSkeleton';
 
 const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: string }> }) => {
     const searchBarQuery = (await searchParams).query
     const session = await auth()
-    const { data: posts } = await fetchPosts(searchBarQuery || undefined)
+    const postsData = await fetchPosts(searchBarQuery || undefined)
+    const posts = Array.isArray(postsData) ? postsData : postsData.data
 
     return (
         <div className='min-h-[100svh] bg-[#F9FAFC]'>

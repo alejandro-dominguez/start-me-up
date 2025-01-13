@@ -2,7 +2,7 @@ import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
 import { Suspense } from 'react';
 import CreateStartUpPageHero from '@/components/createStartUpPageComponents/CreateStartUpPageHero';
-import CreateStartUpPageSkeleton from '@/components/createStartUpPageComponents/CreateStartUpPageSkeleton';
+import CreateStartUpPageSkeleton from '@/components/skeletonComponents/CreateStartUpPageSkeleton';
 import CreateStartUpForm from '@/components/createStartUpPageComponents/CreateStartUpForm';
 
 const CreateStartUpPage = async () => {
