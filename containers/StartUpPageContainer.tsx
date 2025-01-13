@@ -1,12 +1,8 @@
 import {
     PlaylistSchemaType,
-    PlaylistStartupType
+    PlaylistStartupType,
+    StartUpSchemaType
 } from '@/types';
-import {
-    PLAYLIST_QUERY,
-    STARTUP_BY_ID_QUERY
-} from '@/sanity/lib/queries';
-import { client } from '@/sanity/lib/client';
 import { isNonEmptyObject } from '@/lib/utils';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
@@ -15,11 +11,18 @@ import StartUpPageMain from '@/components/startUpPageComponents/StartUpPageMain'
 import EditorStartUpCard from '@/components/cards/EditorStartUpCard';
 import StartUpCardSkeleton from '@/components/cards/StartUpCardSkeleton';
 
-const StartUpPageContainer = async ({ id }: { id: string }) => {
-    const [ post, playlist ] = await Promise.all([
-        client.fetch(STARTUP_BY_ID_QUERY, { id }),
-        client.fetch(PLAYLIST_QUERY)
-    ])
+const StartUpPageContainer = async (
+    {
+        id,
+        post,
+        playlist
+    }:
+    {
+        id: string,
+        post: StartUpSchemaType,
+        playlist: PlaylistSchemaType
+    }
+) => {
     const { select }: PlaylistSchemaType = playlist
 
     const playlistPosts = select?.map((

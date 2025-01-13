@@ -1,12 +1,7 @@
 import { StartUpSchemaType } from '@/types';
-import { STARTUPS_QUERY } from '@/sanity/lib/queries';
-import { sanityFetch } from '@/sanity/lib/live';
 import StartUpCard from '@/components/cards/StartUpCard';
 
-const HomeStartUpsContainer = async ({ searchBarQuery }: { searchBarQuery?: string | '' }) => {
-    const params = { search: searchBarQuery || null }
-    const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params })
-    
+const HomeStartUpsContainer = async ({ posts }: { posts: StartUpSchemaType[] }) => {
     return (
         <>
         {

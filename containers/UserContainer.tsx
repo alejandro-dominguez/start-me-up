@@ -1,27 +1,37 @@
-import {
-    AUTHOR_BY_ID_QUERY,
-    STARTUPS_BY_AUTHOR_QUERY
-} from '@/sanity/lib/queries';
-import { client } from '@/sanity/lib/client';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
+import { StartUpSchemaType } from '@/types';
 import UserCard from '@/components/userComponents/UserCard';
 import UserStartUpSection from '@/components/userComponents/UserStartUpSection';
 import UserPageSkeleton from '@/components/userComponents/UserPageSkeleton';
 
-const UserContainer = async ({ id }: { id: string }) => {
-    const [ user, posts ] = await Promise.all([
-        client.fetch(AUTHOR_BY_ID_QUERY, { id }),
-        client.fetch(STARTUPS_BY_AUTHOR_QUERY, { id })
-    ])
-
+const UserContainer = (
+    {
+        id,
+        user,
+        posts
+    }:
+    {
+        id: string,
+        user: 
+        {
+            name: string,
+            email: string,
+            image: string
+        },
+        posts: StartUpSchemaType[]
+    }
+) => {
     return (
         <Suspense fallback={<UserPageSkeleton />}>
             {
                 user ?
                     <main className='flex flex-col md:flex-row px-4 lg:px-10'>
                         <UserCard user={user} />
-                        <UserStartUpSection id={id} posts={posts} />
+                        <UserStartUpSection
+                            id={id}
+                            posts={posts}
+                        />
                     </main>
                 :
                 notFound()

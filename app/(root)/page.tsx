@@ -2,6 +2,7 @@ import { SanityLive } from '@/sanity/lib/live';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { auth } from '@/auth';
+import { fetchPosts } from '@/lib/fetchRequests';
 import HeroSection from '@/components/homeComponents/HeroSection';
 import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';
 import StartUpCardSkeleton from '@/components/cards/StartUpCardSkeleton';
@@ -9,6 +10,7 @@ import StartUpCardSkeleton from '@/components/cards/StartUpCardSkeleton';
 const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: string }> }) => {
     const searchBarQuery = (await searchParams).query
     const session = await auth()
+    const { data: posts } = await fetchPosts(searchBarQuery || undefined)
 
     return (
         <div className='min-h-[100svh] bg-[#F9FAFC]'>
@@ -54,7 +56,7 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
                 <ul className='relative grid grid-cols-1 sm:grid-cols-2
                 lg:grid-cols-3 gap-8 lg:gap-10 mt-2 sm:mt-5'>
                     <Suspense fallback={<StartUpCardSkeleton />}>
-                        <HomeStartUpsContainer searchBarQuery={searchBarQuery} />
+                        <HomeStartUpsContainer posts={posts} />
                     </Suspense>
                 </ul>
             </main>

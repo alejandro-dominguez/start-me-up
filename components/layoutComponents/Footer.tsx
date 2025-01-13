@@ -31,7 +31,7 @@ const Footer = () => {
                 <ArrowUpFromLine
                     className='absolute top-[1.95rem] xs:top-5 right-1/2 translate-x-1/2'
                     size={35}
-                    strokeWidth={2.45}
+                    strokeWidth={2.15}
                 />
             </button>
         </div>

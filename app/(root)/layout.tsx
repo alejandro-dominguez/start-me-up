@@ -1,7 +1,7 @@
 import Navbar from '@/components/layoutComponents/Navbar';
 import Footer from '@/components/layoutComponents/Footer';
 
-const Layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const MainLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     return (
         <>
             <Navbar />
@@ -11,4 +11,4 @@ const Layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     )
 };
 
-export default Layout;
+export default MainLayout;

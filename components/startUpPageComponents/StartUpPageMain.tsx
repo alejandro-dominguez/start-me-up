@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { Skeleton } from '../ui/skeleton';
 import StartUpPageInfo from './StartUpPageInfo';
 import ViewCounter from '@/components/startUpPageComponents/ViewCounter';
+import StartUpCustomImg from '@/components/imgComponents/StartUpCustomImg';
 
 const StartUpPageMain = ({
     post,
@@ -13,11 +14,11 @@ const StartUpPageMain = ({
 }) => {
     return (
         <main className='px-4 md:px-6 pt-5 md:pt-7 max-w-7xl mx-auto'>
-            <img
-                src={post.image}
-                alt='imagen de portada del artículo'
-                className='w-full max-h-[28rem] rounded-lg object-cover object-center
-                shadow-sm shadow-black/10'
+            <StartUpCustomImg
+                url={post.image}
+                alt={`imagen de portada del artículo ${post.title}` || 'imagen de portada del artículo'}
+                twClassName='w-full max-h-[28rem] rounded-lg object-cover
+                object-center shadow-sm shadow-black/10'
             />
             <StartUpPageInfo post={post} />
             <hr className='border-dotted bg-zinc-400 max-w-4xl my-6 mx-auto' />

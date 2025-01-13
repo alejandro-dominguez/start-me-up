@@ -1,17 +1,17 @@
-import type { NextConfig } from 'next';
+import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     typescript: {
-        ignoreBuildErrors: true
+        ignoreBuildErrors: true,
     },
     eslint: {
-        ignoreDuringBuilds: true
+        ignoreDuringBuilds: true,
     },
     images: {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: '*'
+                hostname: '*',
             },
         ],
     },
@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
     devIndicators: {
         appIsrStatus: true,
         buildActivity: true,
-        buildActivityPosition: 'bottom-right'
+        buildActivityPosition: 'bottom-right',
     },
 };
 

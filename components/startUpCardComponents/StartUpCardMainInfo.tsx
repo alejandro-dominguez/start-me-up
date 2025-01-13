@@ -1,6 +1,6 @@
 import { MousePointer2 } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
+import StartUpAvatarCustomImg from '../imgComponents/StartUpAvatarCustomImg';
 
 const StartUpCardMainInfo = ({
     authorId,
@@ -45,13 +45,11 @@ const StartUpCardMainInfo = ({
                 </Link>
             </div>
             <Link href={`/user/${authorId}`}>
-                <Image
-                    src={authorImage || 'https://placehold.co/48x48.png'}
-                    alt='perfil del autor'
-                    width={48}
-                    height={48}
-                    className='rounded-full drop-shadow-[0_0_1.5px_rgba(0,0,0,0.2)] mt-[.2rem]
-                    brightness-110 contrast-[1.1] saturate-[1.25]'
+                <StartUpAvatarCustomImg
+                    url={authorImage || 'https://placehold.co/100x100.png'}
+                    alt='imagen de perfil del autor'
+                    twClassName='size-12 rounded-full drop-shadow-[0_0_1.5px_rgba(0,0,0,0.2)]
+                    mt-[.2rem] brightness-110 contrast-[1.1] saturate-[1.25]'
                 />
             </Link>
         </div>

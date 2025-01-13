@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import UserPageCustomImg from '../imgComponents/UserPageCustomImg';
 
 const UserCard = (
     { user }:
@@ -21,12 +21,10 @@ const UserCard = (
                 </h3>
             </div>
             <div className='mt-9 xs:mt-[1.35rem] px-7 lg:px-0 grid place-items-center'>
-                <Image
-                    src={user.image}
+                <UserPageCustomImg
+                    url={user.image}
                     alt={user.name}
-                    width={110}
-                    height={110}
-                    className='rounded-full object-cover object-center border-[5.5px]
+                    twClassName='rounded-full object-cover object-center border-[5.5px]
                     border-black shadow shadow-black/10'
                 />
                 <p className='font-bold text-white text-[1.05rem] xs:text-[1.4rem] mt-3

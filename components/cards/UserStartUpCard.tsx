@@ -25,7 +25,6 @@ const UserStartUpCard = ({ post }: { post: StartUpSchemaType }) => {
                     <StartUpCardImg
                         id={post._id}
                         img={post?.image}
-                        isEditor={false}
                     />
                     <StartUpCardBottom
                         id={post._id}

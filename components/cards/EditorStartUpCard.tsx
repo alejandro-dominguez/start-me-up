@@ -1,5 +1,5 @@
 import { PlaylistStartupType } from '@/types';
-import StartUpCardImg from '../startUpCardComponents/StartUpCardImg';
+import EditorStartUpCardImg from '../startUpCardComponents/EditorStartUpCardImg';
 import StartUpCardBottom from '../startUpCardComponents/StartUpCardBottom';
 import EditorStartUpCardTop from '../startUpCardComponents/EditorStartUpCardTop';
 
@@ -16,10 +16,9 @@ const EditorStartUpCard = ({ post }: { post: PlaylistStartupType }) => {
                         createdAt={post._createdAt}
                         title={post?.title}
                     />
-                    <StartUpCardImg
+                    <EditorStartUpCardImg
                         id={post._id}
                         img={post?.image}
-                        isEditor={true}
                     />
                     <StartUpCardBottom
                         id={post._id}
