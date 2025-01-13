@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    @apply scroll-smooth;
+}
+
 body {
-    @apply min-h-[100svh] overflow-y-scroll font-work-sans bg-[#F9FAFC];
+    @apply min-h-[100svh] overflow-x-hidden overflow-y-scroll font-work-sans bg-[#F9FAFC] antialiased;
 }
 
 @layer base {
@@ -11,6 +15,7 @@ body {
         --radius: 0.5rem;
     }
 }
+
 @layer components{
     .tag-decoration {
         @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px]

@@ -13,21 +13,30 @@ import { client } from '@/sanity/lib/client';
 import { StartUpSchemaType } from '@/types';
 import { sanityFetch } from '@/sanity/lib/live';
 
-export const fetchPosts = async (searchBarQuery?: string) => {
-    const cacheKey = `posts_${searchBarQuery || 'all'}`
+export const fetchPosts = async (
+    searchBarQuery?: string, 
+    page: number = 1, 
+    pageSize: number = 6
+) => {
+    const offset = (page - 1) * pageSize
+    const cacheKey = `posts_${searchBarQuery || 'all'}_page_${page}`
     const cachedData = getFromCache<any[]>(cacheKey)
 
     if (cachedData) {
         return cachedData
     }
 
-    const data = await sanityFetch({ 
+    const data = await sanityFetch({
         query: STARTUPS_QUERY,
-        params: { search: searchBarQuery || null }
+        params: { 
+            search: searchBarQuery || null,
+            offset,
+            limit: offset + pageSize
+        }
     })
 
     saveToCache(cacheKey, data)
-    
+
     return data
 };
 

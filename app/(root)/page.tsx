@@ -4,13 +4,26 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { auth } from '@/auth';
 import { fetchPosts } from '@/lib/fetchRequests';
 import HeroSection from '@/components/homeComponents/HeroSection';
+import Pagination from '@/components/homeComponents/Pagination';
 import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';
 import StartUpCardSkeleton from '@/components/skeletonComponents/StartUpCardSkeleton';
 
-const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: string }> }) => {
+const HomePage = async (
+    {
+        searchParams
+    }:
+    {
+        searchParams:
+            Promise<{
+                query: string,
+                page?: string
+            }>
+    }
+) => {
     const searchBarQuery = (await searchParams).query
+    const currentPage = parseInt((await searchParams).page || '1', 10)
     const session = await auth()
-    const postsData = await fetchPosts(searchBarQuery || undefined)
+    const postsData = await fetchPosts(searchBarQuery || undefined, currentPage, 6)
     const posts = Array.isArray(postsData) ? postsData : postsData.data
 
     return (
@@ -54,12 +67,21 @@ const HomePage = async ({ searchParams }: { searchParams: Promise<{ query: strin
                             </p>
                     }
                 </Suspense>
-                <ul className='relative grid grid-cols-1 sm:grid-cols-2
-                lg:grid-cols-3 gap-8 lg:gap-10 mt-2 sm:mt-5'>
+                <ul
+                    id='home-startups'
+                    className='relative grid grid-cols-1 sm:grid-cols-2
+                    lg:grid-cols-3 gap-8 lg:gap-10 mt-2 sm:mt-5'
+                >
                     <Suspense fallback={<StartUpCardSkeleton />}>
                         <HomeStartUpsContainer posts={posts} />
                     </Suspense>
                 </ul>
+                <div className='flex justify-center mt-6'>
+                    <Pagination
+                        currentPage={currentPage}
+                        searchBarQuery={searchBarQuery}
+                    />
+                </div>
             </main>
             <SanityLive />
         </div>

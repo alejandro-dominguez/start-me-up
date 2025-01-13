@@ -41,3 +41,14 @@ export const scrollTop = () => {
 		behavior: 'smooth',
 	})
 };
+
+export const scrollToElement = (id: string, offset: number = 75) => {
+    const el = document.querySelector(`#${id}`)
+    if (el) {
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY
+        window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth',
+        })
+    }
+};
