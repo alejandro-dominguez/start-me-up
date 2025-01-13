@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import EditorCustomImg from '../imgComponents//EditorCustomImg';
+import CustomImg from '../imgComponents/CustomImg';
 
 const EditorStartUpCardImg = ({
     img,
@@ -10,11 +10,14 @@ const EditorStartUpCardImg = ({
 }) => {
     return (
         <Link href={`/startup/${id}`}>
-            <EditorCustomImg
-                url={img}
+            <CustomImg
+                url={img || 'https://placehold.co/235x176.png'}
                 alt='imagen de portada del artículo'
                 twClassName='h-44 rounded-[10px] object-cover object-center
                 w-full shadow-sm shadow-black/10'
+                width={235.33}
+                height={176}
+                placeholderUrl={'https://placehold.co/235x176.png'}
             />
         </Link>
     )

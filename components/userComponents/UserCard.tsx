@@ -1,4 +1,4 @@
-import UserPageCustomImg from '../imgComponents/UserPageCustomImg';
+import CustomImg from '../imgComponents/CustomImg';
 
 const UserCard = (
     { user }:
@@ -21,11 +21,14 @@ const UserCard = (
                 </h3>
             </div>
             <div className='mt-9 xs:mt-[1.35rem] px-7 lg:px-0 grid place-items-center'>
-                <UserPageCustomImg
-                    url={user.image}
-                    alt={user.name}
+                <CustomImg
+                    url={user.image || 'https://placehold.co/110x110.png'}
+                    alt={`imagen de avatar de ${user.name}` || 'imagen de avatar del usuario'}
                     twClassName='rounded-full object-cover object-center border-[5.5px]
                     border-black shadow shadow-black/10'
+                    width={110}
+                    height={110}
+                    placeholderUrl='https://placehold.co/110x110.png'
                 />
                 <p className='font-bold text-white text-[1.05rem] xs:text-[1.4rem] mt-3
                 text-center drop-shadow md:min-w-fit line-clamp-1 px-3'>

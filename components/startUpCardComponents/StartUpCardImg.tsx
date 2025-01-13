@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import HomeCustomImg from '../imgComponents/HomeCustomImg';
+import CustomImg from '../imgComponents/CustomImg';
 
 const StartUpCardImg = ({
     img,
@@ -12,11 +12,14 @@ const StartUpCardImg = ({
 }) => {
     return (
         <Link href={`/startup/${id}`}>
-            <HomeCustomImg
-                url={img}
-                alt={`imagen de portada del artículo ${title}`}
+            <CustomImg
+                url={img || 'https://placehold.co/339x208.png'}
+                alt={`imagen de portada del artículo ${title}` || 'imagen de portada del artículo'}
                 twClassName='h-52 rounded-[10px] object-cover object-center
                 w-full shadow-sm shadow-black/10'
+                width={339.33}
+                height={208}
+                placeholderUrl='https://placehold.co/339x208.png'
             />
         </Link>
     )

@@ -6,7 +6,7 @@ import { signOut } from '@/auth';
 import { Session } from 'next-auth';
 import Link from 'next/link';
 import React from 'react'
-import NavCustomImg from '@/components/imgComponents/NavCustomImg';
+import CustomImg from '@/components/imgComponents/CustomImg';
 
 const UserUl = ({ session }: { session: Session }) => {
     return (
@@ -45,11 +45,14 @@ const UserUl = ({ session }: { session: Session }) => {
                 className='bg-primary-300/75 rounded-full drop-shadow-[0_0_1px_rgba(0,0,0,0.1)]'
             >
                 <li className='m-[.19rem] sm:m-1'>
-                    <NavCustomImg
+                    <CustomImg
                         twClassName='size-[2.2rem] sm:size-10 rounded-full brightness-110
                         contrast-[1.1] saturate-[1.25]'
-                        url={session?.user?.image || 'https://placehold.co/200x200.png'}
-                        alt={session?.user?.name || 'imagen de usuario'}
+                        url={session?.user?.image || 'https://placehold.co/40x40.png'}
+                        alt={`imagen de avatar de ${session?.user?.name}` || 'imagen de avatar del usuario'}
+                        width={40}
+                        height={40}
+                        placeholderUrl='https://placehold.co/40x40.png'
                     />
                 </li>
             </Link>

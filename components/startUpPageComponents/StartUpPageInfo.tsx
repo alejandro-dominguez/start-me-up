@@ -1,7 +1,7 @@
 import { StartUpSchemaType } from '@/types';
 import Link from 'next/link';
 import MarkdownIt from 'markdown-it';
-import StartUpAuthorCustomImg from '../imgComponents/StartUpAuthorCustomImg';
+import CustomImg from '../imgComponents/CustomImg';
 
 const md = MarkdownIt();
 
@@ -15,11 +15,14 @@ const StartUpPageInfo = ({ post }: { post: StartUpSchemaType }) => {
                     href={`/user/${post.author?._id}`}
                     className='flex gap-3 sm:items-center items-end mt-2'
                 >
-                    <StartUpAuthorCustomImg
-                        url={post.author?.image || 'https://placehold.co/400x400.png'}
-                        alt='imagen de avatar del autor'
+                    <CustomImg
+                        url={post.author?.image || 'https://placehold.co/60x60.png'}
+                        alt={`imagen de avatar de ${post.author?.name}` || 'imagen de avatar del autor'}
                         twClassName='size-[60px] saturate-[1.25] brightness-110 contrast-[1.1]
                         rounded-full drop-shadow-[0_0_1px_rgba(0,0,0,0.5)]'
+                        width={60}
+                        height={60}
+                        placeholderUrl='https://placehold.co/60x60.png'
                     />
                     <div className='sm:space-x-2 flex flex-col sm:flex-row
                     items-start sm:items-center'>
