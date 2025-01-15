@@ -3,7 +3,8 @@ import {
     PLAYLIST_QUERY,
     STARTUP_BY_ID_QUERY,
     STARTUPS_BY_AUTHOR_QUERY,
-    STARTUPS_QUERY
+    STARTUPS_QUERY,
+    TOTAL_STARTUPS_QUERY
 } from '@/sanity/lib/queries';
 import {
     getFromCache,
@@ -38,6 +39,21 @@ export const fetchPosts = async (
     saveToCache(cacheKey, data)
 
     return data
+};
+
+export const fethTotalStartUpsQt = async () => {
+    const cacheKey = 'startups_total_quantity'
+    const cachedData = getFromCache<number>(cacheKey)
+
+    if (cachedData) {
+        return cachedData
+    }
+    
+    const totalStartupsQt = await client.fetch(TOTAL_STARTUPS_QUERY)
+    const result = totalStartupsQt
+    saveToCache(cacheKey, result)
+    
+    return result
 };
 
 export const fetchPlaylistAndPostData = async (id: string) => {

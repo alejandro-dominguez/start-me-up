@@ -5,13 +5,15 @@ import Link from 'next/link';
 const Pagination = (
     {
         currentPage,
+        totalPages,
         searchBarQuery
     }: {
         currentPage: number,
-        searchBarQuery?: string
+        totalPages: number,
+        searchBarQuery?: string,
     }
 ) => {
-    const nextPage = currentPage + 1
+    const nextPage = currentPage < totalPages ? currentPage + 1 : null
     const prevPage = currentPage > 2 ? currentPage - 1 : null
 
     return (
@@ -52,18 +54,18 @@ const Pagination = (
                         Siguiente
                     </Link>
             }
+            {
+                currentPage < totalPages &&
+                    <Link
+                        href={`/?query=${searchBarQuery || ''}&page=${totalPages}`}
+                        onClick={() => scrollToElement('home-startups')}
+                        className='px-4 py-2 bg-gray-200 rounded shadow hover:bg-gray-300'
+                    >
+                        Última página
+                    </Link>
+            }
         </div>
     )
 };
 
 export default Pagination;
-
-/* {currentPage < totalPages && (
-    <Link
-        href={`/?query=${searchBarQuery || ''}&page=${totalPages}`}
-        onClick={() => scrollToElement('home-startups')}
-        className='px-4 py-2 bg-gray-200 rounded shadow hover:bg-gray-300'
-    >
-        Última página
-    </Link>
-)} */

@@ -2,7 +2,10 @@ import { SanityLive } from '@/sanity/lib/live';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { auth } from '@/auth';
-import { fetchPosts } from '@/lib/fetchRequests';
+import {
+    fetchPosts,
+    fethTotalStartUpsQt
+ } from '@/lib/fetchRequests';
 import HeroSection from '@/components/homeComponents/HeroSection';
 import Pagination from '@/components/homeComponents/Pagination';
 import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';
@@ -23,6 +26,8 @@ const HomePage = async (
     const searchBarQuery = (await searchParams).query
     const currentPage = parseInt((await searchParams).page || '1', 10)
     const session = await auth()
+    const totalStartUpsQt = await fethTotalStartUpsQt()
+    const totalPages = Math.ceil(totalStartUpsQt / 6)
     const postsData = await fetchPosts(searchBarQuery || undefined, currentPage, 6)
     const posts = Array.isArray(postsData) ? postsData : postsData.data
 
@@ -79,6 +84,7 @@ const HomePage = async (
                 <div className='flex justify-center mt-6'>
                     <Pagination
                         currentPage={currentPage}
+                        totalPages={totalPages}
                         searchBarQuery={searchBarQuery}
                     />
                 </div>

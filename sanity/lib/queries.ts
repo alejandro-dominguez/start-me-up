@@ -25,6 +25,10 @@ export const STARTUPS_QUERY = defineQuery(
     }`
 );
 
+export const TOTAL_STARTUPS_QUERY = defineQuery(
+    `count(*[_type == "startup"])`
+);
+
 export const STARTUP_BY_ID_QUERY = defineQuery(
     `*[_type == 'startup' && _id == $id][0]{
         _id,
