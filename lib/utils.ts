@@ -52,3 +52,7 @@ export const scrollToElement = (id: string, offset: number = 75) => {
         })
     }
 };
+
+export const replaceDotCom = (val: string) => {
+    return val.replace('.com', '')
+};

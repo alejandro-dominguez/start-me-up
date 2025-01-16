@@ -1,3 +1,4 @@
+import { replaceDotCom } from '@/lib/utils';
 import CustomImg from '../imgComponents/CustomImg';
 
 const UserCard = (
@@ -10,6 +11,8 @@ const UserCard = (
         }
     }
 ) => {
+    const userEmail = replaceDotCom(user.email)
+
     return (
         <div className='flex flex-col justify-center mt-[3.75rem] xs:mt-[4.2rem] md:mt-[4.5rem] mx-auto
         md:ml-0 md:mr-7 lg:mr-9 min-w-72 sm:min-w-[28rem] items-center bg-primary
@@ -32,7 +35,7 @@ const UserCard = (
                 />
                 <p className='font-bold text-white text-[1.05rem] xs:text-[1.4rem] mt-3
                 text-center drop-shadow md:min-w-fit line-clamp-1 px-3'>
-                    {user.email}
+                    {userEmail}
                 </p>
             </div>
         </div>
