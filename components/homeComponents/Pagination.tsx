@@ -43,48 +43,69 @@ const Pagination = ({
     };
 
     return (
-        <div className='grid place-items-center gap-5'>
-            <div className='flex gap-6 items-start justify-between'>
+        <div className='grid place-items-center gap-[.85rem]'>
+            <div className='flex items-center gap-4'>
                 <button
                     type='button'
                     onClick={() => switchPages('prevPage')}
-                    className='disabled:bg-red-500 px-4 py-2 bg-gray-200 rounded
-                    shadow hover:bg-gray-300'
+                    className='px-4 xs:px-5 py-[.4rem] bg-slate-300/80 rounded-full text-black/90
+                    shadow-sm shadow-black/15 transition-colors hover:bg-slate-300
+                    ease-out focus-within:bg-slate-300 disabled:bg-slate-300/45
+                    disabled:shadow-black/10 disabled:text-black/60'
                     disabled={prevPageCondition}
                 >
-                    Anterior
+                    <span className='font-semibold text-[.925rem] tracking-[0.015em]'>
+                        Anterior
+                    </span>
                 </button>
-                <span className='px-4 py-2 bg-gray-300 rounded shadow'>
-                    {`${currentPage}/${totalPages}`}
+                <span className='flex gap-1 items-baseline'>
+                    <span className='font-semibold tracking-normal text-[.95rem] xs:text-base'>
+                        Pág.
+                    </span>
+                    <span className='font-bold tracking-wide text-base xs:text-lg'>
+                        {`${currentPage}/${totalPages}`}
+                    </span>
                 </span>
                 <button
                     type='button'
                     onClick={() => switchPages('nextPage')}
-                    className='disabled:bg-red-500 px-4 py-2 bg-gray-200 rounded
-                    shadow hover:bg-gray-300'
+                    className='px-4 xs:px-5 py-[.4rem] bg-slate-300/80 rounded-full text-black/90
+                    shadow-sm shadow-black/15 transition-colors hover:bg-slate-300
+                    ease-out focus-within:bg-slate-300 disabled:bg-slate-300/45
+                    disabled:shadow-black/10 disabled:text-black/60'
                     disabled={nextPageCondition}
                 >
-                    Siguiente
+                    <span className='font-semibold text-[.925rem] tracking-[0.015em]'>
+                        Siguiente
+                    </span>
                 </button>
             </div>
-            <div className='flex gap-6 items-start justify-between'>
+            <div className='flex w-full items-start justify-between'>
                 <button
                     type='button'
                     onClick={() => switchPages('firstPage')}
-                    className='disabled:bg-red-500 px-4 py-2 bg-gray-200 rounded
-                    shadow hover:bg-gray-300'
+                    className='px-4 xs:px-5 py-[.4rem] bg-slate-300/80 rounded-full text-black/90
+                    shadow-sm shadow-black/15 transition-colors hover:bg-slate-300
+                    ease-out focus-within:bg-slate-300 disabled:bg-slate-300/45
+                    disabled:shadow-black/10 disabled:text-black/60'
                     disabled={firstPageCondition}
                 >
-                    Primer página
+                    <span className='font-semibold text-[.925rem] tracking-[0.015em]'>
+                        Primer pág.
+                    </span>
                 </button>                
                 <button
                     type='button'
                     onClick={() => switchPages('lastPage')}
-                    className='disabled:bg-red-500 px-4 py-2 bg-gray-200 rounded
-                    shadow hover:bg-gray-300'
+                    className='px-4 xs:px-5 py-[.4rem] bg-slate-300/80 rounded-full text-black/90
+                    shadow-sm shadow-black/15 transition-colors hover:bg-slate-300
+                    ease-out focus-within:bg-slate-300 disabled:bg-slate-300/45
+                    disabled:shadow-black/10 disabled:text-black/60'
                     disabled={lastPageCondition}
                 >
-                    Última página
+                    <span className='font-semibold text-[.925rem] tracking-[0.015em]'>
+                        Última pág.
+                    </span>
                 </button>
             </div>
         </div>
