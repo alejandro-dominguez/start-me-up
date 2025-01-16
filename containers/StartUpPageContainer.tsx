@@ -11,7 +11,7 @@ import StartUpPageMain from '@/components/startUpPageComponents/StartUpPageMain'
 import EditorStartUpCard from '@/components/cards/EditorStartUpCard';
 import EditorStartUpCardSkeleton from '@/components/skeletonComponents/EditorStartUpCardSkeleton';
 
-const StartUpPageContainer = async (
+const StartUpPageContainer = (
     {
         id,
         post,

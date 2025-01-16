@@ -1,7 +1,7 @@
 import { StartUpSchemaType } from '@/types';
 import StartUpCard from '@/components/cards/StartUpCard';
 
-const HomeStartUpsContainer = async ({ posts }: { posts: StartUpSchemaType[] }) => {
+const HomeStartUpsContainer = ({ posts }: { posts: StartUpSchemaType[] }) => {
     return (
         <>
         {

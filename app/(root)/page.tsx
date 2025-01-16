@@ -2,8 +2,8 @@ import {
     fetchPosts,
     fethTotalStartUpsQt
 } from '@/lib/fetchcalls';
-import { SanityLive } from '@/sanity/lib/live';
 import { Suspense } from 'react';
+import { SanityLive } from '@/sanity/lib/live';
 import { Skeleton } from '@/components/ui/skeleton';
 import { auth } from '@/auth';
 import HeroSection from '@/components/homeComponents/HeroSection';
