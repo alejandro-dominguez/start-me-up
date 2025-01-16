@@ -1,4 +1,4 @@
-import { fetchUserAndPostsData } from '@/lib/fetchRequests';
+import { fetchUserAndPostsData } from '@/lib/fetchcalls';
 import UserContainer from '@/containers/UserContainer';
 
 export const experimental_ppr = true;

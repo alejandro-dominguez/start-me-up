@@ -1,5 +1,5 @@
 import { mainMetadata } from '@/metadata';
-import { fetchUserData } from '@/lib/fetchRequests';
+import { fetchUserData } from '@/lib/fetchcalls';
 import { Metadata } from 'next';
 
 export const generateMetadata = async ({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> => {

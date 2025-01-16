@@ -1,4 +1,4 @@
-import { fetchPlaylistAndPostData } from '@/lib/fetchRequests';
+import { fetchPlaylistAndPostData } from '@/lib/fetchcalls';
 import StartUpPageContainer from '@/containers/StartUpPageContainer';
 
 export const experimental_ppr = true;

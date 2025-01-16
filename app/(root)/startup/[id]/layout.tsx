@@ -1,4 +1,4 @@
-import { fetchStartUpData } from '@/lib/fetchRequests';
+import { fetchStartUpData } from '@/lib/fetchcalls';
 import { mainMetadata } from '@/metadata';
 import { Metadata } from 'next';
 

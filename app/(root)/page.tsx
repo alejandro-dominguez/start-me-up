@@ -1,11 +1,11 @@
+import {
+    fetchPosts,
+    fethTotalStartUpsQt
+ } from '@/lib/fetchcalls';
 import { SanityLive } from '@/sanity/lib/live';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { auth } from '@/auth';
-import {
-    fetchPosts,
-    fethTotalStartUpsQt
- } from '@/lib/fetchRequests';
 import HeroSection from '@/components/homeComponents/HeroSection';
 import Pagination from '@/components/homeComponents/Pagination';
 import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';

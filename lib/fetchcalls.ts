@@ -35,7 +35,6 @@ export const fetchPosts = async (
             limit: offset + pageSize
         }
     })
-
     saveToCache(cacheKey, data)
 
     return data
@@ -101,7 +100,6 @@ export const fetchUserAndPostsData = async (id: string) => {
         client.fetch(AUTHOR_BY_ID_QUERY, { id }),
         client.fetch(STARTUPS_BY_AUTHOR_QUERY, { id })
     ])
-
     const result = { user, posts }
     saveToCache(cacheKey, result)
     
@@ -115,7 +113,6 @@ export const fetchUserData = async (id: string) => {
     if (cachedData) {
         return { user: cachedData }
     }
-
     const user = await client.fetch(AUTHOR_BY_ID_QUERY, { id })
     saveToCache(cacheKey, user)
 
