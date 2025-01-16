@@ -1,4 +1,7 @@
-import { fetchPostsAndTotal } from '@/lib/fetchcalls';
+import {
+    fetchPosts,
+    fethTotalStartUpsQt
+} from '@/lib/fetchcalls';
 import { SanityLive } from '@/sanity/lib/live';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -23,11 +26,10 @@ const HomePage = async (
     const searchBarQuery = (await searchParams).query
     const currentPage = parseInt((await searchParams).page || '1', 10)
     const session = await auth()
-    const postsData = await fetchPostsAndTotal(searchBarQuery || undefined, currentPage, 6)
-    const posts = Array.isArray(postsData.data) ? postsData.data : postsData.data.data
-    const totalStartUpsQt =  typeof postsData.totalCount === 'number' ?
-    postsData.totalCount : postsData.totalCount.data
-    const totalPages = Math.ceil(Number(totalStartUpsQt) / 6)
+    const postsData = await fetchPosts(searchBarQuery || undefined, currentPage, 6)
+    const totalStartUpsData = await fethTotalStartUpsQt()
+    const posts = Array.isArray(postsData) ? postsData : postsData.data
+    const totalPages = Math.ceil((totalStartUpsData) / 6)
 
     return (
         <div className='min-h-[100svh] bg-[#F9FAFC]'>

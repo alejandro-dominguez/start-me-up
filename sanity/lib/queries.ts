@@ -26,13 +26,7 @@ export const STARTUPS_QUERY = defineQuery(
 );
 
 export const TOTAL_STARTUPS_QUERY = defineQuery(
-    `count(*[_type == 'startup' &&
-        defined(slug.current) &&
-        (!defined($search) || 
-        title match $search ||
-        category match $search ||
-        author->name match $search)
-    ])`
+    `count(*[_type == 'startup'])`
 );
 
 export const STARTUP_BY_ID_QUERY = defineQuery(
