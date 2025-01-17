@@ -10,7 +10,7 @@ const EditorStartUpCardSkeleton = () => {
                     key={cn('skeleton', i)}
                     className='list-none'
                 >
-                    <Skeleton className='w-[256.328px] h-[320.994px]
+                    <Skeleton className='w-[288px] xs:w-[256.328px] h-[343.59px] xs:h-[320.994px]
                     rounded-[22px] bg-zinc-400 animate-pulse' />
                 </li>
             ))

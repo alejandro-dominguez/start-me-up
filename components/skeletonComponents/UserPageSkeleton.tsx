@@ -12,7 +12,8 @@ const UserPageSkeleton = () => {
                     Tus Startups:
                 </p>
                 <li className='list-none pb-10'>
-                    <Skeleton className='w-[367px] h-[468.61px] rounded-[22px] bg-zinc-400 animate-pulse' />
+                    <Skeleton className='w-[288px] h-[475.02px] xs:w-[367px] xs:h-[468.61px]
+                    rounded-[22px] bg-zinc-400 animate-pulse' />
                 </li>
             </div>
         </div>
