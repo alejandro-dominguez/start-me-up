@@ -34,7 +34,7 @@ const HomePage = async (
     return (
         <div className='min-h-[100svh] bg-[#F9FAFC]'>
             <HeroSection searchBarQuery={searchBarQuery} />
-            <main className='pb-10 px-4 max-w-7xl mx-auto'>
+            <main className='pb-10 px-4 max-w-7xl mx-auto min-h-[107svh] xs:min-h-[100svh]'>
                 <Suspense fallback={<Skeleton className='bg-slate-400 animate-pulse'/>}>
                     {   
                         searchBarQuery ?
@@ -86,6 +86,7 @@ const HomePage = async (
                         currentPage={currentPage}
                         totalPages={totalPages}
                         searchBarQuery={searchBarQuery}
+                        posts={posts}
                     />
                 </div>
             </main>

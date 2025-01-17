@@ -16,7 +16,7 @@ const UserStartUpSection = async (
     const session = await auth()
     
     return (
-        <div className='flex flex-col md:mt-9'>
+        <div className='flex flex-col md:mt-9 min-h-[107svh] xs:min-h-[100svh]'>
             <p className='text-2xl font-bold text-black pl-2 lg:pl-0 tracking-[.01em] 
             text-center md:text-start mt-5 mb-4 md:mb-2 md:mt-0 mr-1'>
                 {session?.id === id ? 'Tus Startups:' : 'Todas las Startups:'}
