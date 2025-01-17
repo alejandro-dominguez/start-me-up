@@ -17,7 +17,8 @@ const UserContainer = (
         {
             name: string,
             email: string,
-            image: string
+            image: string,
+            emailShown: boolean
         },
         posts: StartUpSchemaType[]
     }
@@ -27,7 +28,10 @@ const UserContainer = (
             {
                 user ?
                     <main className='flex flex-col md:flex-row px-4 lg:px-10'>
-                        <UserCard user={user} />
+                        <UserCard
+                            user={user}
+                            id={id}
+                        />
                         <UserStartUpSection
                             id={id}
                             posts={posts}

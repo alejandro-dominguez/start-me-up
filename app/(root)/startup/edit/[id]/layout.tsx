@@ -10,13 +10,13 @@ export const generateMetadata = async ({ params }: { params: Promise<{ id: strin
         ...mainMetadata,
         title:
             post ?
-                `${post.title} | ${post.author?.name} | Start Me Up | Blog de Startups`
+                `Editar ${post.title} | ${post.author?.name} | Start Me Up | Blog de Startups`
             :
-                'Artículo | Start Me Up | Blog de Startups',
+                'Editar artículo | Start Me Up | Blog de Startups',
     }
 };
 
-const StartUpPageLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const StartUpEditPageLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     return (
         <>
             {children}
@@ -24,4 +24,4 @@ const StartUpPageLayout = ({ children }: Readonly<{ children: React.ReactNode }>
     )
 };
 
-export default StartUpPageLayout;
+export default StartUpEditPageLayout;

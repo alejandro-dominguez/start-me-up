@@ -1,14 +1,22 @@
 import { replaceDotCom } from '@/lib/utils';
+import { Settings } from 'lucide-react';
 import CustomImg from '../imgComponents/CustomImg';
+import Link from 'next/link';
 
 const UserCard = (
-    { user }:
-    { user: 
-        {
-            name: string,
-            email: string,
-            image: string
-        }
+    {
+        user,
+        id
+    }:
+    {
+        user: 
+            {
+                name: string,
+                email: string,
+                image: string,
+                emailShown: boolean
+            },
+        id: string
     }
 ) => {
     const userEmail = replaceDotCom(user.email)
@@ -33,10 +41,24 @@ const UserCard = (
                     height={110}
                     placeholderUrl='https://placehold.co/110x110.png'
                 />
-                <p className='font-bold text-white text-[1.05rem] xs:text-[1.4rem] mt-3
-                text-center drop-shadow md:min-w-fit line-clamp-1 px-3'>
-                    {userEmail}
-                </p>
+                {
+                    user.emailShown ?
+                        <p className='font-bold text-white text-[1.05rem] xs:text-[1.4rem] mt-3
+                        text-center drop-shadow md:min-w-fit line-clamp-1 px-3'>
+                            {userEmail}
+                        </p>
+                    :
+                        null
+                }
+                <Link
+                    href={`/user/edit/${id}`}
+                    className=''
+                >
+                    <span>
+                        Editar preferencias
+                    </span>
+                    <Settings />
+                </Link>
             </div>
         </div>
     )

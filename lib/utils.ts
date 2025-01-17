@@ -42,14 +42,20 @@ export const scrollTop = () => {
 	})
 };
 
-export const scrollToElement = (id: string, offset: number = 75) => {
+export const scrollToElement = (id: string) => {
     const el = document.querySelector(`#${id}`)
     if (el) {
-        const elementPosition = el.getBoundingClientRect().top + window.scrollY
-        window.scrollTo({
-            top: elementPosition - offset,
-            behavior: 'instant',
-        })
+        const elementPosition: number = el.getBoundingClientRect().top + window.scrollY;
+        (window.visualViewport?.width ?? 0) <= 425 ?
+            window.scrollTo({
+                top: elementPosition - 55,
+                behavior: 'instant',
+            })
+        :
+            window.scrollTo({
+                top: elementPosition - 75,
+                behavior: 'smooth',
+            })
     }
 };
 

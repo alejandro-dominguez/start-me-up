@@ -179,6 +179,7 @@ export type Author = {
   name?: string;
   email?: string;
   image?: string;
+  emailShown?: boolean;
 };
 
 export type Markdown = string;

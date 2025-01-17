@@ -1,5 +1,5 @@
-import { mainMetadata } from '@/metadata';
 import { fetchUserData } from '@/lib/fetchcalls';
+import { mainMetadata } from '@/metadata';
 import { Metadata } from 'next';
 
 export const generateMetadata = async ({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> => {
@@ -10,13 +10,13 @@ export const generateMetadata = async ({ params }: { params: Promise<{ id: strin
         ...mainMetadata,
         title:
             user ?
-                `${user.name} | Start Me Up | Blog de Startups`
+                `Preferencias del Perfil | ${user.name} | Start Me Up | Blog de Startups`
             : 
-                'Página de Usuario | Start Me Up | Blog de Startups',
+                'Preferencias del Perfil | Start Me Up | Blog de Startups',
     }
 };
 
-const UserLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const UserEditPageLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     return (
         <>
             {children}
@@ -24,4 +24,4 @@ const UserLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     )
 };
 
-export default UserLayout;
+export default UserEditPageLayout;

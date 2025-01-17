@@ -29,6 +29,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     name,
                     email,
                     image,
+                    emailShown: true
                 })
             }
             return true

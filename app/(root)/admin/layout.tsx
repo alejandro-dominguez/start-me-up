@@ -3,10 +3,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     ...mainMetadata,
-    title: 'Crea tu artículo | Start Me Up | Blog de Startups'
+    title: 'Administrador | Start Me Up | Blog de Startups'
 };
 
-const CreatePageLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const AdminPageLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     return (
         <>
             {children}
@@ -14,4 +14,4 @@ const CreatePageLayout = ({ children }: Readonly<{ children: React.ReactNode }>)
     )
 };
 
-export default CreatePageLayout;
+export default AdminPageLayout;

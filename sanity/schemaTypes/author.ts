@@ -21,6 +21,10 @@ export const author = defineType({
         defineField({
             name: 'image',
             type: 'url'
+        }),
+        defineField({
+            name: 'emailShown',
+            type: 'boolean'
         })
     ],
     preview: {
