@@ -28,14 +28,14 @@ const Footer = () => {
             <button
                 type='button'
                 onClick={() => scrollTop()}
-                className='text-white bg-primary/95 p-[.35rem] rounded-md absolute top-[2.8rem]
-                xs:top-9 right-1/2 translate-x-1/2 shadow-sm shadow-black/20 transition-colors
-                ease-out hover:bg-primary-200/95 focus-within:bg-primary-200/95'
+                className='text-white bg-primary/95 p-[.35rem] rounded-lg absolute -mt-[.1rem]
+                right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 shadow-sm shadow-black/20
+                transition-colors ease-out hover:bg-primary-200/95 focus-within:bg-primary-200/95'
             >
                 <ArrowUpFromLine
                     className='drop-shadow-sm'
-                    size={35}
-                    strokeWidth={2.15}
+                    size={30}
+                    strokeWidth={2.5}
                 />
             </button>
         </div>
