@@ -14,7 +14,8 @@ const UserCard = (
                 name: string,
                 email: string,
                 image: string,
-                emailShown: boolean
+                emailShown: boolean,
+                isAdmin: boolean
             },
         id: string
     }

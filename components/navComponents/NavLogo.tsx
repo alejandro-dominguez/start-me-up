@@ -10,6 +10,7 @@ const NavLogo = () => {
 				alt='Start me up logo'
 				height={53.13}
 				width={100}
+				priority={true}
 			/>
 		</Link>
   	)

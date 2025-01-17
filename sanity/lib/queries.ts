@@ -70,7 +70,9 @@ export const AUTHOR_BY_ID_QUERY = defineQuery(`
         _id,
         name,
         email,
-        image
+        image,
+        emailShown,
+        isAdmin
     }`
 );
 
@@ -105,5 +107,16 @@ export const PLAYLIST_QUERY = defineQuery(`
             image,
             approved
         }
+    }`
+);
+
+export const ADMIN_QUERY = defineQuery(`
+    *[_type == 'author' && isAdmin == true][0]{
+        _id,
+        name,
+        email,
+        image,
+        emailShown,
+        isAdmin
     }`
 );

@@ -4,7 +4,8 @@ import {
     STARTUP_BY_ID_QUERY,
     STARTUPS_BY_AUTHOR_QUERY,
     STARTUPS_QUERY,
-    TOTAL_STARTUPS_QUERY
+    TOTAL_STARTUPS_QUERY,
+    ADMIN_QUERY
 } from '@/sanity/lib/queries';
 import {
     getFromCache,
@@ -22,7 +23,6 @@ export const fetchPosts = async (
     const offset = (page - 1) * pageSize
     const cacheKey = `posts_${searchBarQuery || 'all'}_page_${page}`
     const cachedData = getFromCache<any[]>(cacheKey)
-    let isLoading
     if (cachedData) {
         return cachedData
     }
@@ -100,4 +100,15 @@ export const fetchUserData = async (id: string) => {
     const user = await client.fetch(AUTHOR_BY_ID_QUERY, { id })
     saveToCache(cacheKey, user)
     return { user }
+};
+
+export const fetchAdmin = async () => {
+    const cacheKey = `admin_user`
+    const cachedData = getFromCache<any>(cacheKey)
+    if (cachedData) {
+        return { adminUser: cachedData }
+    }
+    const adminUser = await client.fetch(ADMIN_QUERY)
+    saveToCache(cacheKey, adminUser)
+    return { adminUser }
 };

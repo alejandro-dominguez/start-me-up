@@ -25,6 +25,10 @@ export const author = defineType({
         defineField({
             name: 'emailShown',
             type: 'boolean'
+        }),
+        defineField({
+            name: 'isAdmin',
+            type: 'boolean'
         })
     ],
     preview: {
