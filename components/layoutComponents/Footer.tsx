@@ -7,8 +7,9 @@ import { scrollTop } from '@/lib/utils';
 
 const Footer = () => {
     return (
-        <div className='py-5 px-4 lg:px-10 bg-[#F9FAFC] w-full flex flex-col xs:flex-row
-        items-start xs:items-center justify-between relative z-0'>
+        <div className='py-10 px-4 lg:px-10 bg-primary-100 w-full flex flex-col
+        xs:flex-row items-start xs:items-center justify-between relative
+        shadow-[inset_0_1.5px_4px_0_rgb(0_0_0_/0.045),inset_0_1.5px_3px_-1px_rgb(0_0_0_/0.045)]'>
             <small className='flex flex-col items-start'>
                 <span className='flex items-center gap-1'>
                     <Copyright size={15} />
@@ -27,9 +28,12 @@ const Footer = () => {
             <button
                 type='button'
                 onClick={() => scrollTop()}
+                className='text-white bg-primary/95 p-[.35rem] rounded-md absolute top-[2.8rem]
+                xs:top-9 right-1/2 translate-x-1/2 shadow-sm shadow-black/20 transition-colors
+                ease-out hover:bg-primary-200/95 focus-within:bg-primary-200/95'
             >
                 <ArrowUpFromLine
-                    className='absolute top-[1.95rem] xs:top-5 right-1/2 translate-x-1/2'
+                    className='drop-shadow-sm'
                     size={35}
                     strokeWidth={2.15}
                 />

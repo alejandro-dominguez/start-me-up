@@ -18,8 +18,8 @@ const UserStartUpSection = async (
     return (
         <div className='flex flex-col md:mt-9'>
             <p className='text-2xl font-bold text-black pl-2 lg:pl-0 tracking-[.01em] 
-            text-center md:text-start mt-5 mb-4 md:mb-2 md:mt-0'>
-                {session?.id === id ? 'Tus' : 'Todas las'} Startups:
+            text-center md:text-start mt-5 mb-4 md:mb-2 md:mt-0 mr-1'>
+                {session?.id === id ? 'Tus Startups:' : 'Todas las Startups:'}
             </p>
             <Suspense fallback={<StartUpCardSkeleton />}>
                 <ul className='grid grid-cols-1 lg:grid-cols-2 gap-7 pb-10'>
@@ -34,8 +34,8 @@ const UserStartUpSection = async (
                                 )
                             })
                         :
-                            <p className='text-black-100 text-sm font-normal'>
-                                Todavía no hay artículos
+                            <p className='md:ml-1 text-center text-black-100 text-sm font-normal'>
+                                Aún no hay artículos
                             </p>
                     }
                 </ul>

@@ -48,7 +48,7 @@ export const scrollToElement = (id: string, offset: number = 75) => {
         const elementPosition = el.getBoundingClientRect().top + window.scrollY
         window.scrollTo({
             top: elementPosition - offset,
-            behavior: 'smooth',
+            behavior: 'instant',
         })
     }
 };
