@@ -3,11 +3,10 @@ import {
     fethTotalStartUpsQt
 } from '@/lib/fetchcalls';
 import { Suspense } from 'react';
-import { SanityLive } from '@/sanity/lib/live';
 import { Skeleton } from '@/components/ui/skeleton';
 import { auth } from '@/auth';
 import HeroSection from '@/components/homeComponents/HeroSection';
-import Pagination from '@/components/homeComponents/Pagination';
+import HomePagination from '@/components/paginationComponents/HomePagination';
 import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';
 import StartUpCardSkeleton from '@/components/skeletonComponents/StartUpCardSkeleton';
 
@@ -82,7 +81,7 @@ const HomePage = async (
                     </Suspense>
                 </ul>
                 <div className='flex justify-center mt-6'>
-                    <Pagination
+                    <HomePagination
                         currentPage={currentPage}
                         totalPages={totalPages}
                         searchBarQuery={searchBarQuery}
@@ -90,7 +89,6 @@ const HomePage = async (
                     />
                 </div>
             </main>
-            <SanityLive />
         </div>
     )
 };

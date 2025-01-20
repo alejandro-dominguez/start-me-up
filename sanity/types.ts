@@ -180,10 +180,24 @@ export type Author = {
   email?: string;
   image?: string;
   emailShown?: boolean;
-  isAdmin?: boolean;
+};
+
+export type Admin = {
+  _id: string;
+  _type: "admin";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  select?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "author";
+  }>;
 };
 
 export type Markdown = string;
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | SanityAssetSourceData | Playlist | Startup | Slug | Author | Markdown;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | SanityAssetSourceData | Playlist | Startup | Slug | Author | Admin | Markdown;
 export declare const internalGroqTypeReferenceTo: unique symbol;

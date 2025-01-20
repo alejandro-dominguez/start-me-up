@@ -15,7 +15,7 @@ const StartUpCardBottom = ({
         <div className=
             {
                 !isUserCard ?
-                    'flex justify-between items-center mt-[1.2rem]'
+                    'flex justify-between items-center mt-[1.2rem] w-full'
                 :
                     'flex flex-col mt-4 lg:mt-[.8rem] gap-4 lg:gap-[.8rem]'
             }

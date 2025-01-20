@@ -32,9 +32,12 @@ const StartUpPageInfo = ({ post }: { post: StartUpSchemaType }) => {
                         </span>
                     </div>
                 </Link>
-                <span className='text-[.95rem] sm:text-base font-medium ml-auto'>
+                <Link
+                    href={`/?query=${post.category?.toLowerCase()}`}
+                    className='text-[.95rem] sm:text-base font-medium ml-auto'
+                >
                     {post.category}
-                </span>
+                </Link>
             </div>
             <h3 className='text-3xl font-bold text-black mt-5 leading-8'>
                 Detalles de la Propuesta

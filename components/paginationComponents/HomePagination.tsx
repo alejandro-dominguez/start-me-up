@@ -3,7 +3,7 @@ import { scrollToElement } from '@/lib/utils';
 import { StartUpSchemaType } from '@/types';
 import { useRouter } from 'next/navigation';
 
-const Pagination = ({
+const HomePagination = ({
     currentPage,
     totalPages,
     searchBarQuery,
@@ -127,4 +127,4 @@ const Pagination = ({
     )
 };
 
-export default Pagination;
+export default HomePagination;

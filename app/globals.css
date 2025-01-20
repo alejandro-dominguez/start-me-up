@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    @apply min-h-[100svh] overflow-x-hidden overflow-y-scroll font-work-sans bg-[#F9FAFC] antialiased;
+    @apply overflow-y-scroll pattern bg-primary-200/65;
 }
 
 @layer base {
@@ -17,6 +17,11 @@ body {
 }
 
 @layer components{
+    .body-content-box {
+        @apply min-h-[100svh] w-full overflow-x-hidden font-work-sans bg-[#F9FAFC]
+        antialiased max-w-[1440px] mx-auto;
+    }
+
     .tag-decoration {
         @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px]
 		before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-['']

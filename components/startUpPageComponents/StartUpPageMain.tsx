@@ -39,7 +39,10 @@ const StartUpPageMain = ({
                         justify-end items-center mt-5 fixed bottom-3 right-3 animate-pulse' />
                     }
             >
-                <ViewCounter id={id} />
+                <ViewCounter
+                    totalViews={post.views || 1}
+                    id={id}
+                />
             </Suspense>
         </main>
     )

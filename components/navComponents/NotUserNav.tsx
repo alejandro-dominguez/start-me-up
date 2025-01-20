@@ -3,7 +3,7 @@ import NotUserUl from './ulComponents/NotUserUl';
 
 const NotUserNav = () => {
     return (
-        <nav className='px-4 lg:px-10 bg-[#F9FAFC] flex py-2 w-full relative
+        <nav className='px-4 lg:px-10 2xl:px-24 bg-[#F9FAFC] flex py-2 w-full relative
         h-[6.25rem] sm:h-16 shadow-[0_1.5px_4px_0_rgb(0_0_0_/0.06),0_1.5px_3px_-1px_rgb(0_0_0_/0.06)]'>
             <div className='absolute top-[.35rem] right-1/2 translate-x-1/2
             sm:right-auto sm:translate-x-0'>

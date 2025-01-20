@@ -2,13 +2,13 @@ import {
     defineField,
     defineType
 } from 'sanity';
-import { UserIcon } from 'lucide-react';
+import { UserRoundCog } from 'lucide-react';
 
-export const author = defineType({
-    name: 'author',
-    title: 'Author',
+export const admin = defineType({
+    name: 'admin',
+    title: 'Admin',
     type: 'document',
-    icon: UserIcon,
+    icon: UserRoundCog,
     fields: [
         defineField({
             name: 'name',

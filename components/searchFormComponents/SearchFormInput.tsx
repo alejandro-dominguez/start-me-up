@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Search } from 'lucide-react';
-import SearchFormReset from './SearchFormReset';
+import SearchFormReset from './searchFormBtnComponents/SearchFormReset';
+import SearchFormBtn from './searchFormBtnComponents/SearchFormBtn';
 
 const SearchFormInput = ({ searchBarQuery }: { searchBarQuery?: string | '' }) => {
     const [ isEmpty, setIsEmpty ] = useState<boolean>(true)
@@ -21,19 +21,11 @@ const SearchFormInput = ({ searchBarQuery }: { searchBarQuery?: string | '' }) =
         <div className='flex gap-2'>
             {
                 searchBarQuery ?
-                    <SearchFormReset />
+                    <SearchFormReset setIsEmpty={setIsEmpty} />
                 :
                     null
             }
-            <button
-                type='submit'
-                className='rounded-full bg-secondary-100 grid place-items-center
-                size-9 text-black shadow-sm shadow-black/20 md:mr-3 transition-all
-                duration-200 ease-out hover:bg-secondary-200 hover:shadow-black/30'
-                disabled={isEmpty}
-            >
-                <Search className='size-6 drop-shadow'/>
-            </button>
+            <SearchFormBtn isEmpty={isEmpty} />
         </div>
         </>
     )

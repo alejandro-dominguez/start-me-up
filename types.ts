@@ -36,3 +36,11 @@ export type PlaylistStartupType = {
     _createdAt: string,
     approved: boolean
 };
+
+export type AdminUser = {
+    emailShown: boolean,
+    _id: string,
+    name: string,
+    email: string,
+    image: string
+};

@@ -1,3 +1,4 @@
+'use client';
 import { scrollTop } from '@/lib/utils';
 import { ArrowUpFromLine } from 'lucide-react';
 

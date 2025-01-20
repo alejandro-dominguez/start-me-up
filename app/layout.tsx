@@ -62,8 +62,10 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     return (
         <html lang='en'>
             <body className={workSans.variable}>
-                {children}
-                <Toaster />
+                <div className='body-content-box lg:shadow-2xl lg:shadow-black/20'>
+                    {children}
+                    <Toaster />
+                </div>
             </body>
         </html>
     )

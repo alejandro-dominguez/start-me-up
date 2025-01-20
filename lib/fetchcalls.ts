@@ -5,15 +5,18 @@ import {
     STARTUPS_BY_AUTHOR_QUERY,
     STARTUPS_QUERY,
     TOTAL_STARTUPS_QUERY,
-    ADMIN_QUERY
+    ADMIN_QUERY,
+    ALL_STARTUPS_QUERY
 } from '@/sanity/lib/queries';
+import {
+    PlaylistSchemaType,
+    StartUpSchemaType
+} from '@/types';
 import {
     getFromCache,
     saveToCache
 } from './cache';
 import { client } from '@/sanity/lib/client';
-import { StartUpSchemaType } from '@/types';
-import { sanityFetch } from '@/sanity/lib/live';
 
 export const fetchPosts = async (
     searchBarQuery?: string, 
@@ -22,18 +25,17 @@ export const fetchPosts = async (
 ) => {
     const offset = (page - 1) * pageSize
     const cacheKey = `posts_${searchBarQuery || 'all'}_page_${page}`
-    const cachedData = getFromCache<any[]>(cacheKey)
+    const cachedData = getFromCache<StartUpSchemaType[]>(cacheKey)
     if (cachedData) {
         return cachedData
     }
-    const data = await sanityFetch({
-        query: STARTUPS_QUERY,
-        params: { 
+    const data = await client.fetch(STARTUPS_QUERY,
+        { 
             search: searchBarQuery || null,
             offset,
             limit: offset + pageSize
         }
-    })
+    )
     saveToCache(cacheKey, data)
     return data
 };
@@ -45,18 +47,17 @@ export const fethTotalStartUpsQt = async () => {
         return cachedData
     }
     const totalStartupsQt = await client.fetch(TOTAL_STARTUPS_QUERY)
-    const result = totalStartupsQt
-    saveToCache(cacheKey, result)
-    return result
+    saveToCache(cacheKey, totalStartupsQt)
+    return totalStartupsQt
 };
 
 export const fetchPlaylistAndPostData = async (id: string) => {
     const cacheKey = `playlist_post_${id}`
-    const cachedData = getFromCache<{ post: any; playlist: any }>(cacheKey)
+    const cachedData = getFromCache<{ post: StartUpSchemaType, playlist: PlaylistSchemaType }>(cacheKey)
     if (cachedData) {
         return cachedData
     }
-    const [post, playlist] = await Promise.all([
+    const [ post, playlist ] = await Promise.all([
         client.fetch(STARTUP_BY_ID_QUERY, { id }),
         client.fetch(PLAYLIST_QUERY)
     ])
@@ -78,11 +79,21 @@ export const fetchStartUpData = async (id: string) => {
 
 export const fetchUserAndPostsData = async (id: string) => {
     const cacheKey = `user_posts_${id}`
-    const cachedData = getFromCache<{ user: any; posts: any[] }>(cacheKey)
+    const cachedData = getFromCache<
+    {
+        user: 
+            {
+                name: string,
+                email: string,
+                image: string,
+                emailShown: boolean,
+            }, 
+        posts: StartUpSchemaType[]
+    }>(cacheKey)
     if (cachedData) {
         return cachedData
     }
-    const [user, posts] = await Promise.all([
+    const [ user, posts ] = await Promise.all([
         client.fetch(AUTHOR_BY_ID_QUERY, { id }),
         client.fetch(STARTUPS_BY_AUTHOR_QUERY, { id })
     ])
@@ -93,7 +104,12 @@ export const fetchUserAndPostsData = async (id: string) => {
 
 export const fetchUserData = async (id: string) => {
     const cacheKey = `user_${id}`
-    const cachedData = getFromCache<any>(cacheKey)
+    const cachedData = getFromCache<{
+            name: string,
+            email: string,
+            image: string,
+            emailShown: boolean,
+    }>(cacheKey)
     if (cachedData) {
         return { user: cachedData }
     }
@@ -104,11 +120,27 @@ export const fetchUserData = async (id: string) => {
 
 export const fetchAdmin = async () => {
     const cacheKey = `admin_user`
-    const cachedData = getFromCache<any>(cacheKey)
+    const cachedData = getFromCache<{
+        name: string,
+        email: string,
+        image: string,
+        emailShown: boolean,
+    }>(cacheKey)
     if (cachedData) {
         return { adminUser: cachedData }
     }
     const adminUser = await client.fetch(ADMIN_QUERY)
     saveToCache(cacheKey, adminUser)
     return { adminUser }
+};
+
+export const fetchAllPosts = async () => {
+    const cacheKey = `all_posts`
+    const cachedData = getFromCache<{posts: StartUpSchemaType[]}>(cacheKey)
+    if (cachedData) {
+        return { posts: cachedData }
+    }
+    const posts = await client.fetch(ALL_STARTUPS_QUERY)
+    saveToCache(cacheKey, posts)
+    return posts
 };
