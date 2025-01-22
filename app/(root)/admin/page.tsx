@@ -7,7 +7,10 @@ import { redirect } from 'next/navigation';
 import { AdminUser } from '@/types';
 import { auth } from '@/auth';
 import AdminPageHero from '@/components/adminPageComponents/AdminPageHero';
-import AdminContainer from '@/containers/AdminContainer';
+import Pagination from '@/components/paginationComponents/Pagination';
+import StartUpCardSkeleton from '@/components/skeletonComponents/StartUpCardSkeleton';
+import { Suspense } from 'react';
+import StartUpsContainer from '@/containers/StartupsContainer';
 
 const AdminPage = async (
     {
@@ -34,6 +37,35 @@ const AdminPage = async (
     return (
         <div className='min-h-[100svh] bg-[#F9FAFC]'>
             <AdminPageHero />
+            <main className='pb-10 px-4 max-w-7xl mx-auto min-h-[107svh] xs:min-h-[100svh]'>
+                <p className='font-semibold text-[1.35rem] mt-[.85rem] md:mt-6 mb-3
+                md:mb-0 flex flex-col md:flex-row items-center justify-between'>
+                    <span>
+                        Todas las Startups:
+                    </span>
+                </p>
+                <ul
+                    id='admin-startups'
+                    className='relative grid grid-cols-1 sm:grid-cols-2
+                    lg:grid-cols-3 gap-8 lg:gap-10 mt-2 sm:mt-5'
+                >
+                    <Suspense fallback={<StartUpCardSkeleton />}>
+                        <StartUpsContainer
+                            posts={posts}
+                            isHome={false}
+                        />
+                    </Suspense>
+                </ul>
+                <div className='flex justify-center mt-6'>
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        searchBarQuery={''}
+                        posts={posts}
+                        isHome={false}
+                    />
+                </div>
+            </main>
         </div>
     )
 };

@@ -7,8 +7,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { auth } from '@/auth';
 import HeroSection from '@/components/homeComponents/HeroSection';
 import Pagination from '@/components/paginationComponents/Pagination';
-import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';
 import StartUpCardSkeleton from '@/components/skeletonComponents/StartUpCardSkeleton';
+import StartUpsContainer from '@/containers/StartupsContainer';
 
 const HomePage = async (
     {
@@ -77,7 +77,10 @@ const HomePage = async (
                     lg:grid-cols-3 gap-8 lg:gap-10 mt-2 sm:mt-5'
                 >
                     <Suspense fallback={<StartUpCardSkeleton />}>
-                        <HomeStartUpsContainer posts={posts} />
+                        <StartUpsContainer
+                            posts={posts}
+                            isHome={true}
+                        />
                     </Suspense>
                 </ul>
                 <div className='flex justify-center mt-6'>

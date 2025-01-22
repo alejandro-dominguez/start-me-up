@@ -58,16 +58,16 @@ const Pagination = ({
         switchPages = (buttonAction: string) => {
             switch (buttonAction) {
                 case 'firstPage':
-                    router.push(`/?page=${firstPage}`, { scroll: false })
+                    router.push(`/admin/?page=${firstPage}`, { scroll: false })
                     break
                 case 'prevPage':
-                    router.push(`/?page=${prevPage}`, { scroll: false })
+                    router.push(`/admin/?page=${prevPage}`, { scroll: false })
                     break
                 case 'nextPage':
-                    router.push(`/?page=${nextPage}`, { scroll: false })
+                    router.push(`/admin/?page=${nextPage}`, { scroll: false })
                     break
                 case 'lastPage':
-                    router.push(`/?page=${lastPage}`, { scroll: false })
+                    router.push(`/admin/?page=${lastPage}`, { scroll: false })
                     break
                 default:
                     break
