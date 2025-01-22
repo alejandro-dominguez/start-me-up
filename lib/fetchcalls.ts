@@ -6,7 +6,7 @@ import {
     STARTUPS_QUERY,
     TOTAL_STARTUPS_QUERY,
     ADMIN_QUERY,
-    ALL_STARTUPS_QUERY
+    ADMIN_STARTUPS_QUERY
 } from '@/sanity/lib/queries';
 import {
     PlaylistSchemaType,
@@ -134,13 +134,22 @@ export const fetchAdmin = async () => {
     return { adminUser }
 };
 
-export const fetchAllPosts = async () => {
-    const cacheKey = `all_posts`
-    const cachedData = getFromCache<{posts: StartUpSchemaType[]}>(cacheKey)
+export const fetchAdminPosts = async (
+    page: number = 1, 
+    pageSize: number = 6
+) => {
+    const offset = (page - 1) * pageSize
+    const cacheKey = `admin_posts_page_${page}`
+    const cachedData = getFromCache<StartUpSchemaType[]>(cacheKey)
     if (cachedData) {
-        return { posts: cachedData }
+        return cachedData
     }
-    const posts = await client.fetch(ALL_STARTUPS_QUERY)
-    saveToCache(cacheKey, posts)
-    return posts
+    const data = await client.fetch(ADMIN_STARTUPS_QUERY,
+        { 
+            offset,
+            limit: offset + pageSize
+        }
+    )
+    saveToCache(cacheKey, data)
+    return data
 };

@@ -113,9 +113,10 @@ export const ADMIN_QUERY = defineQuery(
     }`
 );
 
-export const ALL_STARTUPS_QUERY = defineQuery(
-    `*[_type == 'startup'] | order(_createdAt desc){
-        _id, 
+export const ADMIN_STARTUPS_QUERY = defineQuery(
+    `*[_type == 'startup'] | order(_createdAt desc)
+    [$offset...$limit] {
+        _id,
         title, 
         slug,
         _createdAt,

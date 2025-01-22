@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { auth } from '@/auth';
 import HeroSection from '@/components/homeComponents/HeroSection';
-import HomePagination from '@/components/paginationComponents/HomePagination';
+import Pagination from '@/components/paginationComponents/Pagination';
 import HomeStartUpsContainer from '@/containers/HomeStartupsContainer';
 import StartUpCardSkeleton from '@/components/skeletonComponents/StartUpCardSkeleton';
 
@@ -81,11 +81,12 @@ const HomePage = async (
                     </Suspense>
                 </ul>
                 <div className='flex justify-center mt-6'>
-                    <HomePagination
+                    <Pagination
                         currentPage={currentPage}
                         totalPages={totalPages}
                         searchBarQuery={searchBarQuery}
                         posts={posts}
+                        isHome={true}
                     />
                 </div>
             </main>
