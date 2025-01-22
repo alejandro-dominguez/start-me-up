@@ -5,7 +5,7 @@ import { AdminUser } from '@/types';
 import Link from 'next/link';
 
 const FooterAdminBtn = async () => {
-    const { adminUser } = await fetchAdmin() as unknown as { adminUser: AdminUser }
+    const { adminUser } = await fetchAdmin() as { adminUser: AdminUser }
     const loggedUser = await auth()
     const user = loggedUser ? loggedUser.user : null
 
