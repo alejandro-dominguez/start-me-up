@@ -13,7 +13,7 @@ const StartUpCardImg = ({
     return (
         <Link
             href={`/startup/${id}`}
-            className='self-end mt-auto mb-0 justify-self-end'
+            className='self-center mt-auto mb-0 justify-self-end'
         >
             <CustomImg
                 url={img || 'https://placehold.co/339x208.png'}

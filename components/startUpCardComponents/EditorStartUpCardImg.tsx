@@ -9,7 +9,10 @@ const EditorStartUpCardImg = ({
     id: string,
 }) => {
     return (
-        <Link href={`/startup/${id}`}>
+        <Link
+            href={`/startup/${id}`}
+            className='self-center mt-auto mb-0 justify-self-end'
+        >
             <CustomImg
                 url={img || 'https://placehold.co/235x176.png'}
                 alt='imagen de portada del artículo'
